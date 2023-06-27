@@ -1,0 +1,1933 @@
+fileFormatVersion: 2
+guid: b095e6d8bb8d22142b533a4c1868500e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 435
+        width: 46
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b59d98581588c4c80669e837935649
+      internalID: 242066612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 435
+        width: 39
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f51f86e0e7d564d9390a7a2f71be22
+      internalID: -1521933653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_2
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 436
+        width: 39
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8099b2451bccda14198d23c2c67f3f3f
+      internalID: -546141336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_3
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 438
+        width: 36
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d203b5aba22ef47843fbfed913a0bd
+      internalID: -403899556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 419
+        width: 46
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f0b9ede96d238643940203f12ac8ad1
+      internalID: 2025968014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_5
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 420
+        width: 39
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ca2f8d3bbf33949a6f90ef47e8a79c
+      internalID: 422405868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 421
+        width: 39
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e9ab0a4bcf91b448a4693702960e87
+      internalID: -200745982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_7
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 423
+        width: 44
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a900efb0c6db7746a6babcb1cee0cc5
+      internalID: -871406991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 403
+        width: 46
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f69dafd5083754999ee9fcd13b78ff
+      internalID: -858003547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_9
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 404
+        width: 39
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca3e6c6f3b33bad49afb1e3bc1612706
+      internalID: 1746081534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_10
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 405
+        width: 39
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17318c6cc4824db469fea7528baabb9e
+      internalID: 1832034711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_11
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 412
+        width: 46
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75e6fb96bcae284f8d65664bdab0c38
+      internalID: -1345865881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_12
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 405
+        width: 37
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2377f38486d634680e71324ad62cb2
+      internalID: 1788754420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 387
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b7b2532e4bb3f4a96a3846d08c3b8e
+      internalID: 1419989910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_14
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 387
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0464c7ed311328445adcc676cbf95828
+      internalID: -636527786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_15
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 387
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72dfa50aaf942804481a72a2774f2c3f
+      internalID: 509890818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_16
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 387
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf53bd2c12ac704caf35bd6aab933b7
+      internalID: 215111618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_17
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 387
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5f3eeeddb34af141a8337668ebc612f
+      internalID: 1830609074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_18
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 387
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a2f62d00adf1f4cb05a920ea2f927f
+      internalID: 1793256208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_19
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 387
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d6fa5d3aca85b448867264629754cb
+      internalID: -95409788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_20
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 387
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9731dc1fa377c80458dc0d7cbbf1b8ed
+      internalID: 1089932197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_21
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 387
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99ddf8db01e2714aadef7b30705a0c5
+      internalID: -822240112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_22
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 387
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46fc2c39fd762774a921e3a7bf40377b
+      internalID: -2049513430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_23
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 387
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b751069d9a35c842970f18905bd8f1b
+      internalID: 1405813004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_24
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 387
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873ddf5b6e554c749a6c75de0b51a43a
+      internalID: -2100016077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 371
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 989b2a3c71987c245a485847d152b327
+      internalID: -709583026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_26
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 371
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9840bf1ed50a4945b4be97a1778f778
+      internalID: 1872945124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_27
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 371
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b9db93a25c0a644b38138237b5352d
+      internalID: -1056477489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_28
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 371
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f5a63a3da5805459853af4d595d511
+      internalID: 1004311702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_29
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 371
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8206dbbdcaf1ffa40afb372a4d018481
+      internalID: -754577744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_30
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 371
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cb485a7e0163240a2e87b39094e9bd
+      internalID: 1793234298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_31
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 371
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e812a219fd09f41a80f66b3981a1c5
+      internalID: -759269446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_32
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 371
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 133734c66027ae245b0a5dace0c24983
+      internalID: -778327284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_33
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 371
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e12401a9fb12af4389253b04bbb58f3
+      internalID: 1483900935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_34
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 371
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b75eb3e629ed3e46bc9c5314175ca5b
+      internalID: -875762922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_35
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 371
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1694d831aa35fa4f9e825122afdf1ce
+      internalID: -1726991481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_36
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 371
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f532b3972815243bd44237da9e9778
+      internalID: 732089564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_37
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 355
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e899be7e1db7d3e4c89f0398e4a9d005
+      internalID: -2136788347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_38
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 355
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4bd7fec7a4f83499a4f43f78079e45
+      internalID: -8051356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_39
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 355
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1777b4f74a5cd442919ced76202b069
+      internalID: -1579949633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_40
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 355
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b583ea7163138554a87fb5b9cee6efe9
+      internalID: -910001409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_41
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 355
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57902f82481324488edbf5097e8ec49
+      internalID: -53953215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_42
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 355
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1eafd7beae3d74592d22b1acd08a72
+      internalID: -102665978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_43
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 355
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0b54d98b571f04d8b5bd35deedcf7e
+      internalID: -121559152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_44
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 355
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d5f2e7353e133468e0898377f64d68
+      internalID: -405600373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_45
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 355
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f190c1a9190ef41a6e7e89d7e608c4
+      internalID: -485132281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_46
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 355
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9fa5b00595cc354d9a07b24c1e17ad8
+      internalID: -2103501698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_47
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 355
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996744a8e81c79c4492da2748a7bec7b
+      internalID: -1581353801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_48
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 355
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c420b84a35322ae4cbf7a70cc23d7500
+      internalID: 1051042271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_49
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 342
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10e38fb774f6133408ad73bdfb168c46
+      internalID: 193907301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_50
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 340
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8818069f5a42ea7438e935eb36d7bd6e
+      internalID: -1721495679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_51
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 339
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4677bd70ea348594a84369d807889959
+      internalID: 1276508648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_52
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 339
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2663edcd3f4615147a9fb847005bbdb5
+      internalID: 1393746730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_53
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 339
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f59dada3cbcff43b44e2925ca65b1f
+      internalID: -1322385361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_54
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 339
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c824e9410b45574991396acc7a54c35
+      internalID: -1086175693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_55
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 339
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2dbd35775e78e4da2dc05360282579
+      internalID: 634371863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_56
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 339
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0693a07d6eda04a96fd4f33ed91182
+      internalID: 458080287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_57
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 339
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 030a30ba702d31247aceeb3bf58f87ff
+      internalID: 1111746659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_58
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 341
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c7ad4bc3e4800408c95fd8c5a383a1
+      internalID: 802746336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_59
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 341
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd544a8714fe6154ea46f1d74a62d6b6
+      internalID: -1541071792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_60
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 341
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c462dab0271bf614aa849c274eeabe63
+      internalID: 1546886568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_61
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 309
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: -12}
+        - {x: -13, y: 12}
+        - {x: 13, y: 12}
+        - {x: 13, y: -12}
+      physicsShape:
+      - - {x: -12, y: -10}
+        - {x: -12, y: 10}
+        - {x: 12, y: 10}
+        - {x: 12, y: -10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19a23076851a1740be4b984b17654f9
+      internalID: -1671129295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_62
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 309
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: -10}
+        - {x: -12, y: 10}
+        - {x: 12, y: 10}
+        - {x: 12, y: -10}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3410eb940838bd4295d2d2d11704789
+      internalID: 1826263060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_63
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 309
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: -10.5}
+        - {x: -12, y: 9.5}
+        - {x: 11, y: 9.5}
+        - {x: 12, y: -10.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993ce409cdba61c4e8e3796fc85b40cb
+      internalID: -1523337917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_64
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 309
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0a3ddda6f4e6348915a538f748af0c
+      internalID: -678722930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_65
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 309
+        width: 58
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2aa8ffc6b304e48a69bf3e13cd985d
+      internalID: -87409453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_66
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 260
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d0a71b8a3175c489d7646bff677199
+      internalID: 268274700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_67
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 260
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb7ff36951ed0a4fa4bdf34afd5b4e7
+      internalID: -1318700586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_68
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 260
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749fab65f0a55c041badc238da325659
+      internalID: -651432676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_69
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 285
+        width: 60
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13b36a430207294da1dc18dc1fea701
+      internalID: -637714159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_70
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 259
+        width: 9
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9f91b55c752724ba0ac4ef96517a49
+      internalID: 1248134994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_71
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 263
+        width: 59
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65aa16302bf39e74bad526b1eb91acce
+      internalID: 670762837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_72
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 243
+        width: 151
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ecee01fa470f9a4392190a8005e0fc7
+      internalID: 1582505085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_73
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 243
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305efd89dc079ce49950e6bb4c2ef0c9
+      internalID: 2096879611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_74
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 243
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7bc18eee2813844bce261362e031be
+      internalID: -2086554558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_75
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 164
+        width: 59
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e786d1d4ac992094da0b153e65574beb
+      internalID: -933135605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_76
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 162
+        width: 118
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0cb57377c9143f4e91d5208b15b9069
+      internalID: -199069732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_77
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 88
+        width: 57
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32af245488f6a7a49a9642751510e610
+      internalID: 1304426995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_78
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 81
+        width: 118
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e39b08560cb084e85d9be1d04be597
+      internalID: 2039475721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_79
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 10
+        width: 51
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34482410d9cc8d84bbed1d14ac8d18c8
+      internalID: -1815115073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_001_by_McKenzye_80
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1
+        width: 118
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad091b62193c1dc4ba368b9cbef2ff24
+      internalID: -496773129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GUI_001_by_McKenzye_22: -2049513430
+      GUI_001_by_McKenzye_32: -778327284
+      GUI_001_by_McKenzye_2: -546141336
+      GUI_001_by_McKenzye_23: 1405813004
+      GUI_001_by_McKenzye_18: 1793256208
+      GUI_001_by_McKenzye_30: 1793234298
+      GUI_001_by_McKenzye_29: -754577744
+      GUI_001_by_McKenzye_39: -1579949633
+      GUI_001_by_McKenzye_72: 1582505085
+      GUI_001_by_McKenzye_36: 732089564
+      GUI_001_by_McKenzye_44: -405600373
+      GUI_001_by_McKenzye_20: 1089932197
+      GUI_001_by_McKenzye_52: 1393746730
+      GUI_001_by_McKenzye_73: 2096879611
+      GUI_001_by_McKenzye_76: -199069732
+      GUI_001_by_McKenzye_43: -121559152
+      GUI_001_by_McKenzye_48: 1051042271
+      GUI_001_by_McKenzye_13: 1419989910
+      GUI_001_by_McKenzye_10: 1832034711
+      GUI_001_by_McKenzye_27: -1056477489
+      GUI_001_by_McKenzye_47: -1581353801
+      GUI_001_by_McKenzye_15: 509890818
+      GUI_001_by_McKenzye_34: -875762922
+      GUI_001_by_McKenzye_49: 193907301
+      GUI_001_by_McKenzye_33: 1483900935
+      GUI_001_by_McKenzye_56: 458080287
+      GUI_001_by_McKenzye_66: 268274700
+      GUI_001_by_McKenzye_19: -95409788
+      GUI_001_by_McKenzye_40: -910001409
+      GUI_001_by_McKenzye_57: 1111746659
+      GUI_001_by_McKenzye_0: 242066612
+      GUI_001_by_McKenzye_21: -822240112
+      GUI_001_by_McKenzye_4: 2025968014
+      GUI_001_by_McKenzye_7: -871406991
+      GUI_001_by_McKenzye_60: 1546886568
+      GUI_001_by_McKenzye_25: -709583026
+      GUI_001_by_McKenzye_51: 1276508648
+      GUI_001_by_McKenzye_79: -1815115073
+      GUI_001_by_McKenzye_59: -1541071792
+      GUI_001_by_McKenzye_74: -2086554558
+      GUI_001_by_McKenzye_71: 670762837
+      GUI_001_by_McKenzye_6: -200745982
+      GUI_001_by_McKenzye_12: 1788754420
+      GUI_001_by_McKenzye_9: 1746081534
+      GUI_001_by_McKenzye_26: 1872945124
+      GUI_001_by_McKenzye_53: -1322385361
+      GUI_001_by_McKenzye_11: -1345865881
+      GUI_001_by_McKenzye_31: -759269446
+      GUI_001_by_McKenzye_68: -651432676
+      GUI_001_by_McKenzye_78: 2039475721
+      GUI_001_by_McKenzye_3: -403899556
+      GUI_001_by_McKenzye_80: -496773129
+      GUI_001_by_McKenzye_38: -8051356
+      GUI_001_by_McKenzye_64: -678722930
+      GUI_001_by_McKenzye_8: -858003547
+      GUI_001_by_McKenzye_58: 802746336
+      GUI_001_by_McKenzye_37: -2136788347
+      GUI_001_by_McKenzye_45: -485132281
+      GUI_001_by_McKenzye_70: 1248134994
+      GUI_001_by_McKenzye_41: -53953215
+      GUI_001_by_McKenzye_1: -1521933653
+      GUI_001_by_McKenzye_5: 422405868
+      GUI_001_by_McKenzye_63: -1523337917
+      GUI_001_by_McKenzye_17: 1830609074
+      GUI_001_by_McKenzye_62: 1826263060
+      GUI_001_by_McKenzye_28: 1004311702
+      GUI_001_by_McKenzye_69: -637714159
+      GUI_001_by_McKenzye_61: -1671129295
+      GUI_001_by_McKenzye_65: -87409453
+      GUI_001_by_McKenzye_75: -933135605
+      GUI_001_by_McKenzye_24: -2100016077
+      GUI_001_by_McKenzye_46: -2103501698
+      GUI_001_by_McKenzye_67: -1318700586
+      GUI_001_by_McKenzye_16: 215111618
+      GUI_001_by_McKenzye_42: -102665978
+      GUI_001_by_McKenzye_54: -1086175693
+      GUI_001_by_McKenzye_77: 1304426995
+      GUI_001_by_McKenzye_35: -1726991481
+      GUI_001_by_McKenzye_14: -636527786
+      GUI_001_by_McKenzye_55: 634371863
+      GUI_001_by_McKenzye_50: -1721495679
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

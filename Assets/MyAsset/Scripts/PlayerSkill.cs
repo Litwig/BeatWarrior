@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerSkill : MonoBehaviour
@@ -28,6 +29,28 @@ public class PlayerSkill : MonoBehaviour
         
     }
 
+    private void SkillKeySet()
+    {
+        //Left = Fireball
+        //Right = Waterball
+        //Up = Earth
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            GameObject FireballObj = Instantiate(FireBallPrefab, transform.position, transform.rotation);
+            
+        }
+
+        if(Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            GameObject WaterBall = Instantiate(WaterPrefab, transform.position, transform.rotation);
+        }
+
+        if(Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            GameObject EarthObj = Instantiate(EarthPrefab, transform.position, transform.rotation);
+        }
+
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("HitPoint"))

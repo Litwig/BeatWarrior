@@ -14,50 +14,48 @@ public class PlayerSkill : MonoBehaviour
     private GameObject EarthPrefab;
     #endregion
 
-    [SerializeField]
-    private float SkillSpeed;
+    private GameObject SkillObj;
+    public bool isShoot;
 
+    [SerializeField]
+    private Transform SKillTrasform;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        isShoot = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        SkillKeySet();
+
     }
 
-    private void SkillKeySet()
+    public void SkillKeySet()
     {
         //Left = Fireball
         //Right = Waterball
         //Up = Earth
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            GameObject FireballObj = Instantiate(FireBallPrefab, transform.position, transform.rotation);
-            
+            SkillObj = Instantiate(FireBallPrefab, SKillTrasform.position, SKillTrasform.rotation);
+
         }
 
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            GameObject WaterBall = Instantiate(WaterPrefab, transform.position, transform.rotation);
+            SkillObj = Instantiate(WaterPrefab, SKillTrasform.position, SKillTrasform.rotation);
         }
 
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            GameObject EarthObj = Instantiate(EarthPrefab, transform.position, transform.rotation);
+            SkillObj = Instantiate(EarthPrefab, SKillTrasform.position, SKillTrasform.rotation);
         }
 
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.CompareTag("HitPoint"))
-        {
-            Destroy(this);
-        }
-    }
+       
 
-
+    }
 }

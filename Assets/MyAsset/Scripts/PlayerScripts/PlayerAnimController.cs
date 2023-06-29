@@ -6,6 +6,9 @@ public class PlayerAnimController : MonoBehaviour
 {
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,5 +40,12 @@ public class PlayerAnimController : MonoBehaviour
         {
             animator.SetTrigger("Trigger_Skill");
         }
+
+        if(gameManager.isDead==true)
+        {
+            animator.SetBool("isDead", true);
+        }
     }
+
+  
 }

@@ -12,11 +12,17 @@ public class Player : MonoBehaviour
 
     public bool isFall;
     public bool isDamaged;
+    public bool isPotion;
+
+    public bool ItemGet;
+
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         isFall = false;
         isDamaged = false;
+        if (!TryGetComponent<SpriteRenderer>(out spriteRenderer)) { Debug.Log("sprite is null"); }
     }
 
     // Update is called once per frame
@@ -33,6 +39,7 @@ public class Player : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Falling"))
@@ -42,7 +49,32 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.layer == 3) 
         {
+            StartCoroutine("Damage");
             isDamaged = true;
+            
         }
+
+        if(other.CompareTag("Potion"))
+        {
+            isPotion = true;
+        }
+
+        if(other.CompareTag("Item"))
+        {
+            ItemGet = true;
+        }
+    }
+
+    private IEnumerator Damage()
+    {
+       
+        spriteRenderer.color = Color.clear;
+        yield return new WaitForSeconds(0.3f);
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.3f);
+        spriteRenderer.color = Color.clear;
+        yield return new WaitForSeconds(0.3f);
+        spriteRenderer.color = Color.white;
+       
     }
 }

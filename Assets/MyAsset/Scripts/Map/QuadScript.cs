@@ -5,7 +5,8 @@ using UnityEngine;
 public class QuadScript : MonoBehaviour
 {
     public float scrollSpeed = 0.5f; 
-    private Renderer rend; 
+    private Renderer rend;
+    public bool isGameOver = false;
 
     void Start()
     {
@@ -13,8 +14,23 @@ public class QuadScript : MonoBehaviour
     }
     void Update()
     {
-        float offset = Time.time * scrollSpeed; 
-        rend.material.SetTextureOffset("_MainTex", new Vector2(offset, 0)); 
+        if(isGameOver==false)
+        {
+            float offset = Time.time * scrollSpeed;
+            rend.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));
+        }
+        
+        else
+        {
+            scrollSpeed -= Time.deltaTime;
+
+            if(scrollSpeed<=0)
+            {
+                return;
+            }
+        }
     }
+
+    
 
 }

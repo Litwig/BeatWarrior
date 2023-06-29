@@ -18,6 +18,7 @@ public class TimeScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Score.text = gameManager_Script.GetScore.ToString();
     }
 }

@@ -9,6 +9,10 @@ TagManager:
   - RedMonster
   - HitPoint
   - Falling
+  - Item
+  - Potion
+  - PinkItem
+  - BlueItem
   layers:
   - Default
   - TransparentFX

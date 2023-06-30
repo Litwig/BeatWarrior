@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3a5102ed3792b4ba61f2016243f56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterSpeed: -1
+  MonsterSpeed: -3.5
   ChildRender: {fileID: 6016965060058128812}
   MonsterDead: 0
 --- !u!1 &6016965060058128814

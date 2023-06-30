@@ -10,8 +10,7 @@ public class Item : MonoBehaviour
     private CircleCollider2D circleCollider2D;
     private SpriteRenderer spriteRenderer;
 
-    [SerializeField]
-    private float MoveSpeed;
+    private float MoveSpeed = -3.5f;
     [SerializeField]
     private GameManager gameManager;
 
@@ -43,8 +42,8 @@ public class Item : MonoBehaviour
             }
             animator.SetBool("isCollect", true);
             MoveSpeed = 0;
+
             circleCollider2D.enabled = false;
-            spriteRenderer.enabled = false;
             Destroy(gameObject,3f);
         }
     }

@@ -7,8 +7,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rigid2D;
     [SerializeField]
-    private CapsuleCollider2D capsuleCollider2D;
-    [SerializeField]
     private float JumpPower;
     [SerializeField]
     private int JumpCount;
@@ -23,7 +21,6 @@ public class Player : MonoBehaviour
     {
         isFall = false;
         isDamaged = false;
-        if(!TryGetComponent<CapsuleCollider2D>(out capsuleCollider2D)) { Debug.Log("capsule2d is null"); }
         JumpCount = 1;
     }
 

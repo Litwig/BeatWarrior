@@ -13,6 +13,7 @@ TagManager:
   - Potion
   - PinkItem
   - BlueItem
+  - Ground
   layers:
   - Default
   - TransparentFX

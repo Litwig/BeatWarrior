@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
     private Transform RespawnPoint;
     #endregion
 
+    [SerializeField]
+    private SceneControll sceneControllScript;
+
+
     void Start()
     {
         Min = Time.time;
@@ -57,11 +61,20 @@ public class GameManager : MonoBehaviour
 
     private void Score()
     {
-        TimerCount += Time.deltaTime;
+        if (sceneControllScript.isStart == true) 
+        {
+            GetScore = 0;
+            sceneControllScript.isStart = false;
+        }
+        else
+        {
+            TimerCount += Time.deltaTime;
 
-        Minute = TimerCount - Min;
-        SpeedUp = (int)Minute * 1000;
-        GetScore = SpeedUp + PlayerScore;
+            Minute = TimerCount - Min;
+            SpeedUp = (int)Minute * 1000;
+            GetScore = SpeedUp + PlayerScore;
+        }
+      
     }
 
     private void Dead()

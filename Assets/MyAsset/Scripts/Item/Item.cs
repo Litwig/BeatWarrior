@@ -11,7 +11,10 @@ public class Item : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     [SerializeField]
+    private float MoveSpeed;
+    [SerializeField]
     private GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,7 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MoveItem();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -38,9 +42,15 @@ public class Item : MonoBehaviour
                 gameManager.PlayerScore += 100;
             }
             animator.SetBool("isCollect", true);
+            MoveSpeed = 0;
             circleCollider2D.enabled = false;
             spriteRenderer.enabled = false;
             Destroy(gameObject,3f);
         }
+    }
+
+    private void MoveItem()
+    {
+        transform.Translate(MoveSpeed * Time.deltaTime, 0, 0);
     }
 }

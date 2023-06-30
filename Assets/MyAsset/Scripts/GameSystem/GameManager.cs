@@ -36,12 +36,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         Min = Time.time;
         playerScript = PlayerObj.GetComponent<Player>();
         playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
-
         quadScript = SkyObject.GetComponent<QuadScript>();
-
+        GetScore = 0;
         for(int mapScrollIndex = 0; mapScrollIndex < MapPlatformObj.Length; mapScrollIndex++)
         {
             mapScrollScript = MapPlatformObj[mapScrollIndex].GetComponent<MapScroll>();
@@ -61,19 +61,12 @@ public class GameManager : MonoBehaviour
 
     private void Score()
     {
-        if (sceneControllScript.isStart == true) 
-        {
-            GetScore = 0;
-            sceneControllScript.isStart = false;
-        }
-        else
-        {
-            TimerCount += Time.deltaTime;
+        TimerCount += Time.deltaTime;
 
-            Minute = TimerCount - Min;
-            SpeedUp = (int)Minute * 1000;
-            GetScore = SpeedUp + PlayerScore;
-        }
+        Minute = TimerCount - Min;
+        SpeedUp = (int)Minute * 1000;
+        GetScore = SpeedUp + PlayerScore;
+           // sceneControllScript.isStart = false;
       
     }
 
@@ -110,7 +103,6 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         isDead = true;
-        Debug.Log("GameOver");
     }
 
     private void PlayerRespawn()
@@ -119,7 +111,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerObj.transform.position = RespawnPoint.position;
             playerScript.isFall = false;
-            playerInfoScript.PlayerHp--;
+            playerInfoScript.PlayerHp = 0;
         }
     }    
 }

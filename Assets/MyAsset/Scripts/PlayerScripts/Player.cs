@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         Jump();
-        Debug.Log("JumpCount: " + JumpCount);
     }
 
     private void Jump()

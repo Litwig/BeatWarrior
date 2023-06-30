@@ -1,17 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
-
+using TMPro;
 public class UiScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject PauseScreen;
+    [SerializeField]
+    private GameManager gameManagerScript;
+    [SerializeField]
+    private GameObject GameOverPanel;
+    [SerializeField]
+    private GameObject MainUI;
+    [SerializeField]
+    private TMP_Text MyScore;
 
     private void Start()
     {
         PauseScreen.SetActive(false);
     }
+
+    private void Update()
+    {
+        GameOverScreenOn();
+    }
+
     public void PauseGameScreen()
     {
         PauseScreen.SetActive(true);
@@ -22,5 +37,22 @@ public class UiScript : MonoBehaviour
     {
         PauseScreen.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    private void GameOverScreenOn()
+    {
+        if(gameManagerScript.isDead==true)
+        {
+            Debug.Log("GamePanelOff");
+            GameOverPanel.SetActive(true);
+            MainUI.SetActive(false);
+            Time.timeScale = 0f;
+            GameOverScore();
+        }
+    }
+
+    private void GameOverScore()
+    {
+        MyScore.text = gameManagerScript.GetScore.ToString();
     }
 }

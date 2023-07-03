@@ -17,6 +17,7 @@ TagManager:
   - Fire
   - Water
   - Earth
+  - GameManager
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - Monster
   - Water
   - UI
-  - 
-  - 
+  - Skill
+  - HyperTime
   - 
   - 
   - 

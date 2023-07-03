@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     public bool isPotion;
 
     public bool ItemGet;
+
+    private bool isNoHitTime;
+    private float CurrTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         Jump();
+
+        float coolTime = 5f;
+        CurrTime += Time.deltaTime;
     }
 
     private void Jump()
@@ -56,7 +62,8 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.layer == 3) 
         {
-            isDamaged = true;          
+           
+            isDamaged = true;
         }
 
         if(other.CompareTag("Potion"))

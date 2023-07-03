@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
+    #region SCORE
     private float TimerCount;
     private float Min;
     public float GetScore;
     public float Minute;
     private float SpeedUp;
-    
+    #endregion
+
     #region Player
     [SerializeField]
     private GameObject PlayerObj;
@@ -26,8 +27,6 @@ public class GameManager : MonoBehaviour
     private GameObject[] MapPlatformObj;
     private QuadScript quadScript;
     private MapScroll mapScrollScript;
-    [SerializeField]
-    private Transform RespawnPoint;
     #endregion
 
     [SerializeField]
@@ -37,11 +36,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
-        Min = Time.time;
+        GetScore = 0;
+        //if (GetScore < 0)
+        //{
+        //    Min = 0;
+        //    TimerCount = 0;
+        //}
+
         playerScript = PlayerObj.GetComponent<Player>();
         playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
         quadScript = SkyObject.GetComponent<QuadScript>();
-        GetScore = 0;
+
         for(int mapScrollIndex = 0; mapScrollIndex < MapPlatformObj.Length; mapScrollIndex++)
         {
             mapScrollScript = MapPlatformObj[mapScrollIndex].GetComponent<MapScroll>();
@@ -57,14 +62,15 @@ public class GameManager : MonoBehaviour
         Score();
         PotionHeal();
         PlayerRespawn();
+
+        Debug.Log("Score: " + GetScore);
     }
 
     private void Score()
     {
         TimerCount += Time.deltaTime;
 
-        Minute = TimerCount - Min;
-        SpeedUp = (int)Minute * 1000;
+        SpeedUp = (int)TimerCount * 1000;
         GetScore = SpeedUp + PlayerScore;
            // sceneControllScript.isStart = false;
       
@@ -109,9 +115,8 @@ public class GameManager : MonoBehaviour
     {
         if(playerScript.isFall==true)
         {
-            PlayerObj.transform.position = RespawnPoint.position;
-            playerScript.isFall = false;
             playerInfoScript.PlayerHp = 0;
+            playerScript.isFall = false;
         }
     }    
 }

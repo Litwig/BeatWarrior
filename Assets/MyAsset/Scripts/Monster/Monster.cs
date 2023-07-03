@@ -14,17 +14,20 @@ public class Monster : MonoBehaviour
 
     public bool MonsterDead;
 
+    private AudioSource audioSource;
+    private AudioClip clip;
     void Start()
     {
         if(!TryGetComponent<SpriteRenderer>(out spriteRenderer)) { Debug.Log("Monster.Sprite is null"); }
         if(!TryGetComponent<Animator>(out animator)) { Debug.Log("Monster.Animator is null"); }
         if(!TryGetComponent<BoxCollider2D>(out boxCollider)) { Debug.Log("Monster Collider is null"); }
+        if (!TryGetComponent<AudioSource>(out audioSource)) { Debug.Log("Monster Audio is null"); }
+        clip = audioSource.clip;
     }
 
     void Update()
     {
         transform.Translate(MonsterSpeed * Time.deltaTime, 0, 0);
-        MonsterDestroy();
     }
 
     private void OnBecameInvisible()
@@ -38,45 +41,17 @@ public class Monster : MonoBehaviour
         {
             MonsterSpeed = 0;
             animator.SetTrigger("Dead");
-            spriteRenderer.enabled = false;
-            ChildRender.enabled = false;
-            Destroy(gameObject, 2f);
-        }
-
-        if(other.CompareTag("Fire"))
-        {
-            if(this.gameObject.CompareTag("RedMonster"))
-            {
-                MonsterDead = true;
-            }
-        }
-
-        if(other.CompareTag("Water"))
-        {
-            if (this.gameObject.CompareTag("BlueMonster"))
-            {
-                MonsterDead = true;
-            }
-        }
-
-        if(other.CompareTag("Earth"))
-        {
-            if (this.gameObject.CompareTag("GreenMonster"))
-            {
-                MonsterDead = true;
-            }
-        }
-    }
-
-    private void MonsterDestroy()
-    {
-        if(MonsterDead==true)
-        {
-            animator.SetBool("Dead", true);
-            MonsterSpeed = 0;
             boxCollider.enabled = false;
-            Destroy(gameObject, 3f);
+            Destroy(gameObject, 0.5f);
         }
-        
+
+       if(other.gameObject.layer == 6)
+        {
+            MonsterSpeed = 0;
+            animator.SetTrigger("Dead");
+            boxCollider.enabled = false;
+            audioSource.Play();
+            Destroy(gameObject, clip.length);
+        }
     }
 }

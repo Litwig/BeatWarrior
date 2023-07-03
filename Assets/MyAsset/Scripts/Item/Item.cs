@@ -10,22 +10,19 @@ public class Item : MonoBehaviour
     private CircleCollider2D circleCollider2D;
     private SpriteRenderer spriteRenderer;
 
-    private float MoveSpeed = -3.5f;
-    [SerializeField]
     private GameManager gameManager;
 
+    private AudioSource audioSource;
+    private AudioClip clip;
     // Start is called before the first frame update
     void Start()
     {
         if(!TryGetComponent<Animator>(out animator)) { Debug.Log("null animator"); }
         if(!TryGetComponent<CircleCollider2D>(out circleCollider2D)) { Debug.Log("null circle"); }
         if(!TryGetComponent<SpriteRenderer>(out spriteRenderer)) { Debug.Log("Sprite null"); }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        MoveItem();
+        gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        if (!TryGetComponent<AudioSource>(out audioSource)) { Debug.Log("null audio"); }
+        clip = audioSource.clip;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -41,15 +38,10 @@ public class Item : MonoBehaviour
                 gameManager.PlayerScore += 100;
             }
             animator.SetBool("isCollect", true);
-            MoveSpeed = 0;
 
             circleCollider2D.enabled = false;
-            Destroy(gameObject,3f);
+            audioSource.Play();
+            Destroy(gameObject, clip.length);
         }
-    }
-
-    private void MoveItem()
-    {
-        transform.Translate(MoveSpeed * Time.deltaTime, 0, 0);
     }
 }

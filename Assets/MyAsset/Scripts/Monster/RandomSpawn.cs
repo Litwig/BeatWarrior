@@ -1,57 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class RandomSpawn : MonoBehaviour
 {
+ 
     [SerializeField]
-    private GameObject[] SpawnItem;
-    [SerializeField]
-    private GameObject[] SpawnMonster;
+    private GameObject[] SpawnObject;
     [SerializeField]
     private Transform[] SpawnTransform;
 
-    private int MonsterCount;
-    private int ItemCount;
     [SerializeField]
-    private int MonsterMaxCount;
+    private int SpawnLimit;
     [SerializeField]
-    private int ItemMaxCount;
-    private bool isSpawn;
-    
-    void Start()
+    private int SpawnCount;
+    [SerializeField]
+    private MapScroll mapScrollScript;
+
+    [SerializeField]
+    private bool[] isSpawn;
+
+
+    private float CurrTime;
+    private float SpawnTime = 1f;
+
+    private void Start()
     {
+        isSpawn = new bool[SpawnTransform.Length];
+
         
+        for(int i=0; i<SpawnTransform.Length; ++i)
+        {
+            isSpawn[i] = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(MonsterCount <=MonsterMaxCount || ItemCount <=ItemMaxCount)
+        if (CurrTime >= SpawnTime && SpawnCount < SpawnLimit)
         {
-            isSpawn = true;
+            int x = Random.Range(0, SpawnTransform.Length);
+            if (!isSpawn[x])
+            {
+                SpawnEnemy(x);
+            }
+
         }
-        else
-        {
-            isSpawn = false;
-        }
-        MonsterSpawn();
+
+        CurrTime += Time.deltaTime;
+        MapScrollComplete();
+
+    }
+
+    private void SpawnEnemy(int randNum)
+    {
+        int ObjRand = Random.Range(0, SpawnObject.Length);
+        Instantiate(SpawnObject[ObjRand], SpawnTransform[randNum]);
+        CurrTime = 0;
+        ++SpawnCount;
+        isSpawn[randNum] = true;
+        Debug.Assert(isSpawn[randNum], "RandNum");
     }
 
 
-    private void MonsterSpawn()
+    private void MapScrollComplete()
     {
-        if (isSpawn)
+        if(mapScrollScript.isReroll==true)
         {
-            int MonsterRandom = Random.Range(0, SpawnMonster.Length);
-            int SpawnRandom = Random.Range(0, SpawnTransform.Length);
-            int ItemRandom = Random.Range(0, SpawnItem.Length);
-            Transform SpawnPoint = SpawnTransform[SpawnRandom].transform;
-
-            Instantiate(SpawnMonster[MonsterRandom], SpawnPoint.transform.position, SpawnPoint.transform.rotation);
-            Instantiate(SpawnItem[ItemRandom], SpawnPoint.transform.position, SpawnPoint.transform.rotation);
-            MonsterCount += 1;
-            ItemCount += 1;
+            SpawnCount = 0;
+            mapScrollScript.isReroll = false;
+            for(int i=0; i<SpawnTransform.Length; ++i)
+            {
+                isSpawn[i] = false;
+            }
         }
     }
 }

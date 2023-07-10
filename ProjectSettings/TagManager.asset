@@ -18,6 +18,7 @@ TagManager:
   - Water
   - Earth
   - GameManager
+  - Skill
   layers:
   - Default
   - TransparentFX

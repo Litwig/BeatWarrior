@@ -4,22 +4,35 @@ using UnityEngine.UI;
 
 public class ButtonScript : MonoBehaviour
 {
-    Button button;
-    Image image;
+    [SerializeField]
+    private GameObject[] button;
+
+    [SerializeField]
+    private Toggle[] toggle;
+
     private void Start()
     {
-        if(!TryGetComponent<Button>(out button)) { Debug.Log("Button is null"); }
-        if (!TryGetComponent<Image>(out image)) { Debug.Log("Image is null"); }
+      
     }
 
     private void Update()
     {
-        
+        PressKey();
     }
 
     public void PressKey()
     {
-        
+        for(int i=0; i<toggle.Length; i++)
+        {
+            if (toggle[i].isOn)
+            {
+                button[i].SetActive(true);
+            }
+            else
+            {
+                button[i].SetActive(false);
+            }
+        }
        
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SelectGrey : MonoBehaviour
 {
     [SerializeField]
-    SPUM_SpriteList spriteList;
+    private SPUM_SpriteList spriteList;
 
     private List<SpriteRenderer> Spum_itemList = new List<SpriteRenderer>();
     private List<SpriteRenderer> Spum_eyeList = new List<SpriteRenderer>();

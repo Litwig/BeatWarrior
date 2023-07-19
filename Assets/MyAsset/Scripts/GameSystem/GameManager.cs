@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Player
-    [SerializeField]
     private GameObject PlayerObj;
     private Player playerScript;
     private PlayerInfo playerInfoScript;
@@ -29,20 +28,28 @@ public class GameManager : MonoBehaviour
     private MapScroll mapScrollScript;
     #endregion
 
+    #region SCRIPT
     [SerializeField]
     private SceneControll sceneControllScript;
+    [SerializeField]
+    private CharacterSpawn characterDataScript;
+    #endregion
+
+    [SerializeField]
+    private Transform PlayerSpawnPoint;
 
 
     void Start()
     {
         Time.timeScale = 1f;
         GetScore = 0;
-        //if (GetScore < 0)
-        //{
-        //    Min = 0;
-        //    TimerCount = 0;
-        //}
+        //PlayerObj = Instantiate(PlayerArray[0], PlayerObj.transform);
+        Instantiate(characterDataScript.CharacterPrefab, PlayerSpawnPoint);
 
+        if(PlayerObj ==null)
+        {
+            Debug.Log("PlayerNULL");
+        }
         playerScript = PlayerObj.GetComponent<Player>();
         playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
         quadScript = SkyObject.GetComponent<QuadScript>();
@@ -58,12 +65,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Dead();
+        //Dead();
         Score();
-        PotionHeal();
-        PlayerRespawn();
-
-        Debug.Log("Score: " + GetScore);
+        //PotionHeal();
+        //PlayerRespawn();
     }
 
     private void Score()

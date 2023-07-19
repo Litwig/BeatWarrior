@@ -5,8 +5,10 @@ public class HpUi : MonoBehaviour
 {
     [SerializeField]
     private Animator[] animator;
-   
+
     [SerializeField]
+    private GameManager gameManager;
+
     private GameObject player;
 
     private Player playerScript;
@@ -15,6 +17,7 @@ public class HpUi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //player = gameManager.PlayerObj;
         playerInfo = player.GetComponent<PlayerInfo>();
         playerScript = player.GetComponent<Player>();
     }

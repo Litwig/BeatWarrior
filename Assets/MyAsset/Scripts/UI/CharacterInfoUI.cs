@@ -10,22 +10,10 @@ public class CharacterInfoUI : MonoBehaviour
     [SerializeField]
     private GameObject[] Character;
     [SerializeField]
-    private TMP_Text[] SkillText;
-    [SerializeField]
-    private TMP_Text[] SkillNameText;
-    [SerializeField]
     private CharacterData characterData_Script;
-
-    [SerializeField]
-    private TMP_Text PlayerName;
     private void Start()
     {
         InfoPanel.SetActive(false);
-        for (int i = 0; i < SkillText.Length; i++)
-        {
-            SkillNameText[i].text = characterData_Script.PlayerSkillName[i];
-            SkillText[i].text = characterData_Script.PlayerSkill[i];
-        }
     }
 
     private void Update()
@@ -36,8 +24,7 @@ public class CharacterInfoUI : MonoBehaviour
     {
         InfoPanel.SetActive(true);
         characterData_Script.playerType = CharacterData.PLAERTYPE.BLACKMAGE;
-        PlayerName.text = characterData_Script.PlayerName;
-        
+
         for(int i=0; i<3; i++)
         {
             if(i==0)
@@ -50,19 +37,12 @@ public class CharacterInfoUI : MonoBehaviour
                 Character[i].SetActive(false);
             }
         }
-
-        for (int i=0; i<SkillText.Length; i++)
-        {
-            SkillNameText[i].text = characterData_Script.PlayerSkillName[i];
-            SkillText[i].text = characterData_Script.PlayerSkill[i];            
-        }
     }
     
     public void HolyMageInfoActive() 
     {
         InfoPanel.SetActive(true);
         characterData_Script.playerType = CharacterData.PLAERTYPE.HOLYMAGE;
-        PlayerName.text = characterData_Script.PlayerName;
 
         for (int i = 0; i < 3; i++)
         {
@@ -76,19 +56,12 @@ public class CharacterInfoUI : MonoBehaviour
                 Character[i].SetActive(false);
             }
         }
-
-        for (int i = 0; i < SkillText.Length; i++)
-        {
-            SkillNameText[i].text = characterData_Script.PlayerSkillName[i];
-            SkillText[i].text = characterData_Script.PlayerSkill[i];
-        }
     }  
     
     public void IceMageInfoActive()
     {
         InfoPanel.SetActive(true);
         characterData_Script.playerType = CharacterData.PLAERTYPE.ICEMAGE;
-        PlayerName.text = characterData_Script.PlayerName;
 
         for (int i = 0; i < 3; i++)
         {
@@ -100,12 +73,6 @@ public class CharacterInfoUI : MonoBehaviour
             {
                 Character[i].SetActive(false);
             }
-        }
-
-        for (int i = 0; i < SkillText.Length; i++)
-        {
-            SkillNameText[i].text = characterData_Script.PlayerSkillName[i];
-            SkillText[i].text = characterData_Script.PlayerSkill[i];
         }
     }
 

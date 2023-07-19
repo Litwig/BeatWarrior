@@ -1,9 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterData : MonoBehaviour
+public class CharacterSpawn : MonoBehaviour
 {
-
-    public enum PLAERTYPE { BLACKMAGE, HOLYMAGE, ICEMAGE, MAGE_COUNT}
+    public enum PLAERTYPE { BLACKMAGE, HOLYMAGE, ICEMAGE, MAGE_COUNT }
     public PLAERTYPE playerType = PLAERTYPE.MAGE_COUNT;
 
     [SerializeField]
@@ -12,7 +13,7 @@ public class CharacterData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -38,5 +39,4 @@ public class CharacterData : MonoBehaviour
                 break;
         }
     }
-  
 }

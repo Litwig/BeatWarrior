@@ -19,4 +19,9 @@ public class SceneControll : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void SelectCharacter()
+    {
+        SceneManager.LoadScene("CharacterSelect");
+    }
 }

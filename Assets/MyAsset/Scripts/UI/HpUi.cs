@@ -6,18 +6,17 @@ public class HpUi : MonoBehaviour
     [SerializeField]
     private Animator[] animator;
 
-    [SerializeField]
-    private GameManager gameManager;
-
     private GameObject player;
 
     private Player playerScript;
     private PlayerInfo playerInfo;
-    
+
+    [SerializeField]
+    private CharacterSpawn characterSpawnScript;
     // Start is called before the first frame update
     void Start()
     {
-        //player = gameManager.PlayerObj;
+        player = characterSpawnScript.CharacterPrefab;
         playerInfo = player.GetComponent<PlayerInfo>();
         playerScript = player.GetComponent<Player>();
     }

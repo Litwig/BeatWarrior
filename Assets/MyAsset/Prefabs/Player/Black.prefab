@@ -843,6 +843,8 @@ GameObject:
   - component: {fileID: 1651520754}
   - component: {fileID: 1651520756}
   - component: {fileID: 1651520751}
+  - component: {fileID: 7523589890488507139}
+  - component: {fileID: -4954540029325288888}
   m_Layer: 5
   m_Name: Black
   m_TagString: Untagged
@@ -976,6 +978,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7523589890488507139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784462227738665199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b86c7c02977604d9a201ea1244a2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigid2D: {fileID: 1651520755}
+  JumpPower: 6
+  JumpCount: 1
+  isFall: 0
+  isDamaged: 0
+  isPotion: 0
+  ItemGet: 0
+--- !u!114 &-4954540029325288888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784462227738665199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164d6888e9427024599aeb1ed7689c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHp: 3
 --- !u!1 &1831289369180132009
 GameObject:
   m_ObjectHideFlags: 0

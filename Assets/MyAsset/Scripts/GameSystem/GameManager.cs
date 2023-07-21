@@ -31,25 +31,22 @@ public class GameManager : MonoBehaviour
     #region SCRIPT
     [SerializeField]
     private SceneControll sceneControllScript;
-    [SerializeField]
-    private CharacterSpawn characterDataScript;
+    //[SerializeField]
+    //private CharacterSpawn characterDataScript;
     #endregion
 
     [SerializeField]
     private Transform PlayerSpawnPoint;
-
+    
 
     void Start()
     {
         Time.timeScale = 1f;
         GetScore = 0;
-        //PlayerObj = Instantiate(PlayerArray[0], PlayerObj.transform);
-        Instantiate(characterDataScript.CharacterPrefab, PlayerSpawnPoint);
 
-        if(PlayerObj ==null)
-        {
-            Debug.Log("PlayerNULL");
-        }
+        //PlayerObj = characterDataScript.CharacterPrefab;
+        Instantiate(PlayerObj, PlayerSpawnPoint);
+
         playerScript = PlayerObj.GetComponent<Player>();
         playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
         quadScript = SkyObject.GetComponent<QuadScript>();

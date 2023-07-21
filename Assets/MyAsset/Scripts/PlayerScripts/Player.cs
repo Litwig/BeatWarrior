@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -31,8 +29,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         Jump();
-
-        float coolTime = 5f;
         CurrTime += Time.deltaTime;
     }
 

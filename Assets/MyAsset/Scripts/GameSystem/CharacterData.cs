@@ -1,42 +1,33 @@
 using UnityEngine;
+using UnityEngine.UI;
 
+public enum PLAYERTYPE { BLACKMAGE, HOLYMAGE, ICEMAGE, MAGE_COUNT }
 public class CharacterData : MonoBehaviour
 {
+    public static CharacterData instance;
+    
+    public PLAYERTYPE playerType;
 
-    public enum PLAERTYPE { BLACKMAGE, HOLYMAGE, ICEMAGE, MAGE_COUNT}
-    public PLAERTYPE playerType = PLAERTYPE.MAGE_COUNT;
+    public ToggleMng toggleMngScript;
 
-    [SerializeField]
-    private GameObject[] CharacterArray;
-    public GameObject CharacterPrefab;
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        CharacterLoad();
-    }
-
-    private void CharacterLoad()
-    {
-        switch (playerType)
+        if (instance == null)
         {
-            case PLAERTYPE.BLACKMAGE:
-                CharacterPrefab = CharacterArray[0];
-                break;
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
 
-            case PLAERTYPE.HOLYMAGE:
-                CharacterPrefab = CharacterArray[1];
-                break;
-
-            case PLAERTYPE.ICEMAGE:
-                CharacterPrefab = CharacterArray[2];
-                break;
+        else
+        {
+            Destroy(this.gameObject);
         }
     }
-  
+
+    private void Update()
+    {
+        playerType = (PLAYERTYPE)toggleMngScript.toggleIndex;
+    }
+
+
 }

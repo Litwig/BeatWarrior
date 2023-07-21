@@ -9,8 +9,8 @@ public class CharacterInfoUI : MonoBehaviour
 
     [SerializeField]
     private GameObject[] Character;
-    [SerializeField]
-    private CharacterData characterData_Script;
+    //[SerializeField]
+    //private CharacterData characterData_Script;
     private void Start()
     {
         InfoPanel.SetActive(false);
@@ -23,7 +23,7 @@ public class CharacterInfoUI : MonoBehaviour
     public void DarkMageInfoActive()
     {
         InfoPanel.SetActive(true);
-        characterData_Script.playerType = CharacterData.PLAERTYPE.BLACKMAGE;
+        //characterData_Script.playerType = UnityEditor.U2D.Animation.CharacterData.PLAERTYPE.BLACKMAGE;
 
         for(int i=0; i<3; i++)
         {
@@ -42,7 +42,7 @@ public class CharacterInfoUI : MonoBehaviour
     public void HolyMageInfoActive() 
     {
         InfoPanel.SetActive(true);
-        characterData_Script.playerType = CharacterData.PLAERTYPE.HOLYMAGE;
+        //characterData_Script.playerType = UnityEditor.U2D.Animation.CharacterData.PLAERTYPE.HOLYMAGE;
 
         for (int i = 0; i < 3; i++)
         {
@@ -61,7 +61,7 @@ public class CharacterInfoUI : MonoBehaviour
     public void IceMageInfoActive()
     {
         InfoPanel.SetActive(true);
-        characterData_Script.playerType = CharacterData.PLAERTYPE.ICEMAGE;
+        //characterData_Script.playerType = UnityEditor.U2D.Animation.CharacterData.PLAERTYPE.ICEMAGE;
 
         for (int i = 0; i < 3; i++)
         {

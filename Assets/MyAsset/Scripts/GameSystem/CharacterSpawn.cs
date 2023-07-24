@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterSpawn : MonoBehaviour
 {
+    //캐릭터 스폰해줌
     public enum PLAERTYPE { BLACKMAGE, HOLYMAGE, ICEMAGE, MAGE_COUNT }
     public PLAERTYPE playerType = PLAERTYPE.MAGE_COUNT;
 

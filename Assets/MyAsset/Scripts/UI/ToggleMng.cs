@@ -8,7 +8,9 @@ public class ToggleMng : MonoBehaviour
 
     private Button toggleButton;
 
-    public int toggleIndex;
+    [SerializeField]
+    private CharacterData characterData;
+
     void Start()
     {
         for(int i = 0; i < toggleArray.Length; i++)
@@ -31,7 +33,7 @@ public class ToggleMng : MonoBehaviour
             toggleButton.gameObject.SetActive(toggleArray[i].isOn);
             if (toggleArray[i].isOn)
             {
-                toggleIndex = i;
+                characterData.SelectCharacterIndex(i);
             }
         }
 

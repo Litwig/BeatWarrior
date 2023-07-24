@@ -1,32 +1,32 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public enum PLAYERTYPE { BLACKMAGE, HOLYMAGE, ICEMAGE, MAGE_COUNT }
+
 public class CharacterData : MonoBehaviour
 {
     public static CharacterData instance;
-    
-    public PLAYERTYPE playerType;
 
-    public ToggleMng toggleMngScript;
+    private enum PLAYERTYPE { BLACKMAGE, HOLYMAGE, ICEMAGE, MAGE_COUNT }
+    private PLAYERTYPE playerType;
+
+    public int PlayerIndex;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
+       if (instance == null)
+       {
+           instance = this;
+           DontDestroyOnLoad(this.gameObject);
+       }
 
-        else
-        {
-            Destroy(this.gameObject);
-        }
+       else
+       {
+           Destroy(this.gameObject);
+       }
     }
 
-    private void Update()
+    public void SelectCharacterIndex(int index)
     {
-        playerType = (PLAYERTYPE)toggleMngScript.toggleIndex;
+        PlayerIndex = index;
     }
 
 

@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour
     #region SCRIPT
     [SerializeField]
     private SceneControll sceneControllScript;
-    //[SerializeField]
-    //private CharacterSpawn characterDataScript;
+    [SerializeField]
+    private ReSpawn reSpawnScript;
     #endregion
 
     [SerializeField]
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         GetScore = 0;
 
         //PlayerObj = characterDataScript.CharacterPrefab;
-        Instantiate(PlayerObj, PlayerSpawnPoint);
+       
 
         playerScript = PlayerObj.GetComponent<Player>();
         playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();

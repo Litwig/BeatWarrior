@@ -8872,7 +8872,7 @@ MonoBehaviour:
   - {fileID: 995459511}
   - {fileID: 1172672099}
   sceneControllScript: {fileID: 918434342}
-  characterDataScript: {fileID: 1526280884}
+  reSpawnScript: {fileID: 1824033163}
   PlayerSpawnPoint: {fileID: 1824033162}
 --- !u!4 &1526280883
 Transform:
@@ -11843,6 +11843,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1526280882}
+    - target: {fileID: 5436846140081073099, guid: 52f755b7d615f344ea8588ef943db677, type: 3}
+      propertyPath: characterSpawnObject
+      value: 
+      objectReference: {fileID: 1526280881}
     - target: {fileID: 5436846140081073099, guid: 52f755b7d615f344ea8588ef943db677, type: 3}
       propertyPath: characterSpawnScript
       value: 

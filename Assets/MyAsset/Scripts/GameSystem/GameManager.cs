@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Player
+    [SerializeField]
     private GameObject PlayerObj;
     private Player playerScript;
     private PlayerInfo playerInfoScript;
@@ -44,13 +46,18 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         GetScore = 0;
 
-        //PlayerObj = characterDataScript.CharacterPrefab;
-       
+        Debug.Log("character: " + reSpawnScript.Character.name);
 
-        playerScript = PlayerObj.GetComponent<Player>();
-        playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
+
+        //!PlayrObj == PlayerObj==null << Same Thing?
+        if (!PlayerObj)
+        {
+            Debug.Log("nullllll");
+        }
+        
+        
         quadScript = SkyObject.GetComponent<QuadScript>();
-
+        
         for(int mapScrollIndex = 0; mapScrollIndex < MapPlatformObj.Length; mapScrollIndex++)
         {
             mapScrollScript = MapPlatformObj[mapScrollIndex].GetComponent<MapScroll>();
@@ -62,6 +69,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerObj = reSpawnScript.Character;
+        playerScript = PlayerObj.GetComponent<Player>();
+        playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
         //Dead();
         Score();
         //PotionHeal();

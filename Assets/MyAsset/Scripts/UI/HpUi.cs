@@ -17,7 +17,7 @@ public class HpUi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = characterSpawnScript.CharacterPrefab;
+        player = GameObject.FindWithTag("Player");
         if (player == null)
         {
             Debug.Log("Player is null");

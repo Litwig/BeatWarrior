@@ -5,25 +5,12 @@ using UnityEngine;
 
 public class PlayerSkill : MonoBehaviour
 {
-    #region SKILL_PREFAB
-    [SerializeField]
-    private GameObject FireBallPrefab;
-    [SerializeField]
-    private GameObject WaterPrefab;
-    [SerializeField]
-    private GameObject EarthPrefab;
-    #endregion
-
-    private GameObject SkillObj;
-    public bool isShoot;
 
     [SerializeField]
-    private Transform SKillTrasform;
-    
+    private SkillType skillTypeScript;
     // Start is called before the first frame update
     void Start()
     {
-        isShoot = false;
     }
 
     // Update is called once per frame
@@ -39,20 +26,22 @@ public class PlayerSkill : MonoBehaviour
         //Right = Waterball
         //Up = Earth
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) //1Skill
         {
-            SkillObj = Instantiate(FireBallPrefab, SKillTrasform.position, SKillTrasform.rotation);
-
+            skillTypeScript.Generate = true;
+            skillTypeScript.enumSkillType = SkillType.SKILLTYPE.SHOOT_TYPE;
         }
 
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if(Input.GetKeyDown(KeyCode.RightArrow)) //3Skill
         {
-            SkillObj = Instantiate(WaterPrefab, SKillTrasform.position, SKillTrasform.rotation);
+            skillTypeScript.Generate = true;
+            skillTypeScript.enumSkillType = SkillType.SKILLTYPE.STOP_TYPE;
         }
 
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.UpArrow)) //Skill2
         {
-            SkillObj = Instantiate(EarthPrefab, SKillTrasform.position, SKillTrasform.rotation);
+            skillTypeScript.Generate = true;
+            skillTypeScript.enumSkillType = SkillType.SKILLTYPE.FRONT_TYPE;
         }
 
        

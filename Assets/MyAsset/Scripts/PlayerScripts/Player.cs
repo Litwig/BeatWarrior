@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
         {
             if (JumpCount > 0)
             {
+                
                 rigid2D.AddForce(Vector3.up * JumpPower, ForceMode2D.Impulse);
                 --JumpCount;
             }

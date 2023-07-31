@@ -3913,7 +3913,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 870305938}
         m_TargetAssemblyTypeName: CharacterInfoUI, Assembly-CSharp
         m_MethodName: PanelClose
         m_Mode: 1
@@ -15858,7 +15858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1669493685
 RectTransform:
   m_ObjectHideFlags: 0

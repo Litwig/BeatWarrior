@@ -8,6 +8,6 @@ public class PlayerAnimationEvent : MonoBehaviour
     PlayerSkill playerSkillScript;
     public void OnEventSkill()
     {
-        playerSkillScript.isShoot = true;
+       // playerSkillScript.isShoot = true;
     }
 }

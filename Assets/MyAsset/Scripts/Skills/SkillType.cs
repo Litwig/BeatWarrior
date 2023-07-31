@@ -16,8 +16,9 @@ public class SkillType : MonoBehaviour
     [SerializeField]
     private GameObject StopSkillObj;
 
+    public bool Generate;
     [SerializeField]
-    private bool Generate;
+    private Transform[] SkillPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +40,7 @@ public class SkillType : MonoBehaviour
         switch (enumSkillType)
         {
             case SKILLTYPE.SHOOT_TYPE:
-                Instantiate(ShootSkillObj, transform.position, transform.rotation);
+                Instantiate(ShootSkillObj, SkillPos[0].position, SkillPos[0].rotation);
                 Generate = false;
                 break;
             case SKILLTYPE.FRONT_TYPE:
@@ -55,7 +56,7 @@ public class SkillType : MonoBehaviour
                 Generate = false;
                 break;
             case SKILLTYPE.STOP_TYPE:
-                Instantiate(StopSkillObj, transform.position, transform.rotation);
+                Instantiate(StopSkillObj, SkillPos[1].position, SkillPos[1].rotation);
                 Generate = false;
                 break;
         }

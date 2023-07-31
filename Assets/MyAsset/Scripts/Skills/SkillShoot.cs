@@ -23,6 +23,7 @@ public class SkillShoot : MonoBehaviour
     {
         if(other.gameObject.layer == 3)
         {
+            
             Destroy(gameObject);
         }
     }

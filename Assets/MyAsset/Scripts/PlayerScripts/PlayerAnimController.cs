@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PlayerAnimController : MonoBehaviour
 {
-    [SerializeField]
+
     private Animator animator;
-    [SerializeField]
-    private GameManager gameManager;
+    //[SerializeField]
+    //private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        //animator.TryGetComponent<Animator>(out animator);
-
-        //if (animator == null)
-        //    Debug.Log("null");
+     
+        animator = gameObject.GetComponent<Animator>();
+       if (animator == null)
+           Debug.Log("null");
     }
 
     // Update is called once per frame
@@ -41,10 +41,10 @@ public class PlayerAnimController : MonoBehaviour
             animator.SetTrigger("Trigger_Skill");
         }
 
-        if(gameManager.isDead==true)
-        {
-            animator.SetBool("isDead", true);
-        }
+        //if(gameManager.isDead==true)
+        //{
+        //    animator.SetBool("isDead", true);
+        //}
     }
 
   

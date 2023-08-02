@@ -72,6 +72,11 @@ public class GameManager : MonoBehaviour
         PlayerObj = reSpawnScript.Character;
         playerScript = PlayerObj.GetComponent<Player>();
         playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
+
+        if(PlayerObj)
+        {
+            Debug.Log("Player is not null");
+        }
         //Dead();
         Score();
         //PotionHeal();
@@ -84,8 +89,7 @@ public class GameManager : MonoBehaviour
 
         SpeedUp = (int)TimerCount * 1000;
         GetScore = SpeedUp + PlayerScore;
-           // sceneControllScript.isStart = false;
-      
+        // sceneControllScript.isStart = false;
     }
 
     private void Dead()

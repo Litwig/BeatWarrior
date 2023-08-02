@@ -12,8 +12,8 @@ public class ReSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Character = Instantiate(CharacterArray[(int)CharacterData.instance.PlayerIndex]);
-        //Character.transform.position = transform.position;
+        Character = Instantiate(CharacterArray[(int)CharacterData.instance.PlayerIndex]);
+        Character.transform.position = transform.position;
     }
 
     // Update is called once per frame

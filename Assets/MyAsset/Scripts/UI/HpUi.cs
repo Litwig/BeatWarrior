@@ -18,11 +18,6 @@ public class HpUi : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        if (player == null)
-        {
-            Debug.Log("Player is null");
-        }
-
         characterSpawnScript = characterSpawnObject.GetComponent<CharacterSpawn>();
      
 
@@ -30,6 +25,11 @@ public class HpUi : MonoBehaviour
         {
             Debug.Log("Player Null");
         }
+        else
+        {
+            Debug.Log("Player Find");
+        }
+
         playerInfo = player.GetComponent<PlayerInfo>();
         playerScript = player.GetComponent<Player>();
     }

@@ -28,6 +28,4 @@ public class CharacterData : MonoBehaviour
     {
         PlayerIndex = index;
     }
-
-
 }

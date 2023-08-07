@@ -14,8 +14,7 @@ public class PlayerAnimController : MonoBehaviour
     {
      
         animator = gameObject.GetComponent<Animator>();
-       if (animator == null)
-           Debug.Log("null");
+
     }
 
     // Update is called once per frame

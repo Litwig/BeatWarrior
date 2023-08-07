@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -41,20 +42,16 @@ public class GameManager : MonoBehaviour
     private Transform PlayerSpawnPoint;
     
 
-    void Start()
+    IEnumerator Start()
     {
+        yield return new WaitForSeconds(1f);
         Time.timeScale = 1f;
         GetScore = 0;
-
-        Debug.Log("character: " + reSpawnScript.Character.name);
-
-
-        //!PlayrObj == PlayerObj==null << Same Thing?
-        if (!PlayerObj)
-        {
-            Debug.Log("nullllll");
-        }
-        
+       
+       
+        PlayerObj = reSpawnScript.Character;
+        playerScript = PlayerObj.GetComponent<Player>();
+        playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
         
         quadScript = SkyObject.GetComponent<QuadScript>();
         
@@ -69,14 +66,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerObj = reSpawnScript.Character;
-        playerScript = PlayerObj.GetComponent<Player>();
-        playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
-
-        if(PlayerObj)
-        {
-            Debug.Log("Player is not null");
-        }
         //Dead();
         Score();
         //PotionHeal();

@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int JumpCount;
 
+    [SerializeField]
+    private BoxCollider2D boxCollider2D;
+
     public bool isFall;
     public bool isDamaged;
     public bool isPotion;

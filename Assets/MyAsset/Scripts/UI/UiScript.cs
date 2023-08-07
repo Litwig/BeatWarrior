@@ -43,7 +43,6 @@ public class UiScript : MonoBehaviour
     {
         if(gameManagerScript.isDead==true)
         {
-            Debug.Log("GamePanelOff");
             GameOverPanel.SetActive(true);
             MainUI.SetActive(false);
             Time.timeScale = 0f;

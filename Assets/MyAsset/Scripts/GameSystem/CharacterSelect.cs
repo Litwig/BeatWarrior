@@ -17,6 +17,5 @@ public class CharacterSelect : MonoBehaviour
     {
         animator.SetBool("isSelect", toggle.isOn);
         selectGrey.isSelect = toggle.isOn;
-        Debug.Log("SelectChatacter: " + toggle.isOn);
     }
 }

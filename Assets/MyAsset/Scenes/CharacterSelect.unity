@@ -8446,7 +8446,7 @@ MonoBehaviour:
   - {fileID: 1030219829}
   - {fileID: 1669493684}
   - {fileID: 1198161410}
-  characterData_Script: {fileID: 0}
+  characterData_Script: {fileID: 1106835194}
 --- !u!4 &870305939
 Transform:
   m_ObjectHideFlags: 0

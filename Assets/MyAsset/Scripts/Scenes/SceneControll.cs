@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneControll : MonoBehaviour
 {
-    public bool isStart = false;
+    //public bool isStart = false;
 
     public void GotoTitleScene()
     {
@@ -12,7 +12,7 @@ public class SceneControll : MonoBehaviour
     public void PlayScene()
     {
         SceneManager.LoadScene("PlayScene");
-        isStart = true;
+        //isStart = true;
     }
 
     public void QuitScene()

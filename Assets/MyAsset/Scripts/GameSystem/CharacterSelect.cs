@@ -9,10 +9,12 @@ public class CharacterSelect : MonoBehaviour
 
     [SerializeField]
     private SelectGrey selectGrey;
-    private void Start()
+
+    private void Start() 
     {
         if(!TryGetComponent(out toggle)) { Debug.Log("Toggle null"); }
     }
+
     public void SelectCharacter()
     {
         animator.SetBool("isSelect", toggle.isOn);

@@ -45,7 +45,7 @@ public class Monster : MonoBehaviour
             Destroy(gameObject, 0.5f);
         }
 
-       if(other.gameObject.layer == 6)
+       if(other.CompareTag("Skill"))
         {
             MonsterSpeed = 0;
             animator.SetTrigger("Dead");

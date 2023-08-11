@@ -13,6 +13,7 @@ public class ToggleMng : MonoBehaviour
 
     void Start()
     {
+        characterData = GameObject.FindWithTag("GameSystem").GetComponent<CharacterData>();
         for(int i = 0; i < toggleArray.Length; i++)
         {
             toggleButton = toggleArray[i].transform.GetComponentInChildren<Button>();

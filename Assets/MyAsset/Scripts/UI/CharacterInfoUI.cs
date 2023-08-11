@@ -11,11 +11,13 @@ public class CharacterInfoUI : MonoBehaviour
     private GameObject[] Character;
     [SerializeField]
     private GameObject[] CharacterInfoArray;
+
     [SerializeField]
     private CharacterData characterData_Script;
     private void Start()
     {
         InfoPanel.SetActive(false);
+        characterData_Script = GameObject.FindWithTag("GameSystem").GetComponent<CharacterData>();
     }
 
     private void Update()

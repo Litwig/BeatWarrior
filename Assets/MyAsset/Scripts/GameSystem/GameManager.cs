@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         GetScore = 0;
        
-       
         PlayerObj = reSpawnScript.Character;
         playerScript = PlayerObj.GetComponent<Player>();
         playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();

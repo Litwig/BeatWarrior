@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.layer == 3) 
         {
-           
+            
             isDamaged = true;
         }
 

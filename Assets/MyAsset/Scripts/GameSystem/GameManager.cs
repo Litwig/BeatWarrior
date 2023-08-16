@@ -36,18 +36,19 @@ public class GameManager : MonoBehaviour
     private SceneControll sceneControllScript;
     [SerializeField]
     private ReSpawn reSpawnScript;
+    [SerializeField]
+    private CameraShake cameraShakeScript;
     #endregion
 
     [SerializeField]
     private Transform PlayerSpawnPoint;
     
 
-    IEnumerator Start()
+    void Start()
     {
-        yield return new WaitForSeconds(1f);
-        Time.timeScale = 1f;
+        //yield return new WaitForSeconds(1f);
         GetScore = 0;
-       
+        Time.timeScale = 1f;
         PlayerObj = reSpawnScript.Character;
         playerScript = PlayerObj.GetComponent<Player>();
         playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
@@ -65,10 +66,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Dead();
+        Dead();
         Score();
-        //PotionHeal();
-        //PlayerRespawn();
+        PotionHeal();
+        PlayerRespawn();
     }
 
     private void Score()
@@ -77,21 +78,22 @@ public class GameManager : MonoBehaviour
 
         SpeedUp = (int)TimerCount * 1000;
         GetScore = SpeedUp + PlayerScore;
-        // sceneControllScript.isStart = false;
+        //sceneControllScript.isStart = false;
     }
 
     private void Dead()
     {
         if (playerScript.isDamaged == true) 
         {
+            cameraShakeScript.isDamage = true;
             --playerInfoScript.PlayerHp;
             playerScript.isDamaged = false;
-            
         }
 
         if(playerInfoScript.PlayerHp<=0)
         {
             GameOver();
+            Debug.Log("Player Damage");
             mapScrollScript.isGameOver = true;
             quadScript.isGameOver = true;
         }

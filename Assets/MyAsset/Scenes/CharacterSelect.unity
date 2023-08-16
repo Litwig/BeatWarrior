@@ -2403,6 +2403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2144030393140488018}
   selectGrey: {fileID: 6779040935950867120}
+  AnimBool: 0
 --- !u!114 &228059367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10528,7 +10529,7 @@ GameObject:
   - component: {fileID: 1106835193}
   - component: {fileID: 1106835194}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameSystemData
   m_TagString: GameSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11676,6 +11677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 111190113004524601}
   selectGrey: {fileID: 8215295987352574388}
+  AnimBool: 0
 --- !u!114 &1214322404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20668,6 +20670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6969843465552943111}
   selectGrey: {fileID: 7839340853208029613}
+  AnimBool: 0
 --- !u!114 &2141861416
 MonoBehaviour:
   m_ObjectHideFlags: 0

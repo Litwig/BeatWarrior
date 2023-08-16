@@ -10,7 +10,7 @@ public class ReSpawn : MonoBehaviour
     public GameObject Character;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Character = Instantiate(CharacterArray[(int)CharacterData.instance.PlayerIndex]);
         Character.transform.position = transform.position;

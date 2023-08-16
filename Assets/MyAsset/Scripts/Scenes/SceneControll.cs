@@ -7,10 +7,12 @@ public class SceneControll : MonoBehaviour
 
     public void GotoTitleScene()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("StartScene");
     }
+
     public void PlayScene()
-    {
+    { 
         SceneManager.LoadScene("PlayScene");
         //isStart = true;
     }

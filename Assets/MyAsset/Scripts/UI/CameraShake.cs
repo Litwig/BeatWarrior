@@ -24,6 +24,7 @@ public class CameraShake : MonoBehaviour
         {
             if (ShakeTime > 0)
             {
+                ShakingOn(0.1f);
                 transform.position = Random.insideUnitSphere * ShakeAmount + initialPosition;
                 ShakeTime -= Time.deltaTime;
             }
@@ -32,11 +33,12 @@ public class CameraShake : MonoBehaviour
                 ShakeTime = 0.0f;
                 transform.position = initialPosition;
             }
+            isDamage = false;
         }
    
     }
 
-    public float ShakingOn(float Time)
+    private float ShakingOn(float Time)
     {
         ShakeTime = Time;
         return ShakeTime;

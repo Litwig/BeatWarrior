@@ -2240,13 +2240,14 @@ GameObject:
   - component: {fileID: -3709074970427865947}
   - component: {fileID: -1793122849179561021}
   - component: {fileID: 215791201}
+  - component: {fileID: 8289761004549067246}
   m_Layer: 8
   m_Name: Ice
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7646422107595076961
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2377,6 +2378,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillTypeScript: {fileID: 1408476344}
+--- !u!114 &8289761004549067246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5308059056049938374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3451d766f2a2c884686fa7ac5596b51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColorType: 0
+  spriteList: {fileID: 8339693331979361978}
+  isSelect: 0
 --- !u!1 &5524052022206785189
 GameObject:
   m_ObjectHideFlags: 0

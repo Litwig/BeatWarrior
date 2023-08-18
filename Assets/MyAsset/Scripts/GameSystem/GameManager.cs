@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     private ReSpawn reSpawnScript;
     [SerializeField]
     private CameraShake cameraShakeScript;
+    private SelectGrey selectGreyScript;
     #endregion
 
     [SerializeField]
@@ -52,9 +53,9 @@ public class GameManager : MonoBehaviour
         PlayerObj = reSpawnScript.Character;
         playerScript = PlayerObj.GetComponent<Player>();
         playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
-        
+        selectGreyScript = PlayerObj.GetComponent<SelectGrey>();
         quadScript = SkyObject.GetComponent<QuadScript>();
-        
+        selectGreyScript.ColorType = SelectGrey.COLORTYPE.STAGE_TYPE;
         for(int mapScrollIndex = 0; mapScrollIndex < MapPlatformObj.Length; mapScrollIndex++)
         {
             mapScrollScript = MapPlatformObj[mapScrollIndex].GetComponent<MapScroll>();
@@ -86,8 +87,8 @@ public class GameManager : MonoBehaviour
         if (playerScript.isDamaged == true) 
         {
             cameraShakeScript.isDamage = true;
+            StartCoroutine("ColorChange");
             --playerInfoScript.PlayerHp;
-            playerScript.isDamaged = false;
         }
 
         if(playerInfoScript.PlayerHp<=0)
@@ -125,4 +126,15 @@ public class GameManager : MonoBehaviour
             playerScript.isFall = false;
         }
     }    
+
+
+    IEnumerator ColorChange()
+    {
+        PlayerObj.layer = 7;
+        selectGreyScript.SpriteColor(Color.red);
+        yield return new WaitForSeconds(0.5f);
+        selectGreyScript.SpriteColor(Color.white);
+        PlayerObj.layer = 8;
+        playerScript.isDamaged = false;
+    }
 }

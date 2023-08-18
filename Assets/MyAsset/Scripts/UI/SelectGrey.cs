@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SelectGrey : MonoBehaviour
 {
+    public enum COLORTYPE { SELECT_TYPE, STAGE_TYPE}
+    public COLORTYPE ColorType;
     [SerializeField]
     private SPUM_SpriteList spriteList;
 
@@ -35,18 +37,26 @@ public class SelectGrey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isSelect)
+        switch(ColorType)
         {
-            SpriteColor(Color.white);
+            case COLORTYPE.SELECT_TYPE:
+                if (isSelect)
+                {
+                    SpriteColor(Color.white);
+                }
+                else
+                {
+                    SpriteColor(Color.grey);
+                }
+                break;
+            case COLORTYPE.STAGE_TYPE:
+                break;
         }
-        else
-        {
-            SpriteColor(Color.grey);
-        }
+    
 
     }
 
-    private void SpriteColor(Color color)
+    public void SpriteColor(Color color)
     {
         for(int i=0; i<Spum_itemList.Count; i++)
         {

@@ -14,16 +14,13 @@ public class HpUi : MonoBehaviour
 
     [SerializeField]
     private GameObject characterSpawnObject;
-    private CharacterSpawn characterSpawnScript;
+
+    [SerializeField]
+    private ReSpawn characterSpawnScript;
     // Start is called before the first frame update
-    IEnumerator Start()
+    void Start()
     {
-       
-        yield return new WaitForSeconds(3f);
-        player = GameObject.FindWithTag("Player");
-
-        characterSpawnScript = characterSpawnObject.GetComponent<CharacterSpawn>();
-
+        player = characterSpawnScript.Character;
         playerInfo = player.GetComponent<PlayerInfo>();
         playerScript = player.GetComponent<Player>();
         
@@ -32,10 +29,10 @@ public class HpUi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(playerScript.isDamaged==true)
-        //{
-        //    animator[playerInfo.PlayerHp - 1].SetBool("isOff", true);
-        //}
+       if(playerScript.isDamaged==true)
+       {
+           animator[playerInfo.PlayerHp - 1].SetBool("isOff", true);
+       }
     }    
 
    

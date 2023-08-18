@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private BoxCollider2D boxCollider2D;
 
+    private CapsuleCollider2D capsuleCollider2D;
+
     public bool isFall;
     public bool isDamaged;
     public bool isPotion;
@@ -20,12 +22,14 @@ public class Player : MonoBehaviour
 
     private bool isNoHitTime;
     private float CurrTime;
+
     // Start is called before the first frame update
     void Start()
     {
         isFall = false;
         isDamaged = false;
         JumpCount = 1;
+        if(!TryGetComponent(out capsuleCollider2D)) { Debug.Log("Capsule is null"); }
     }
 
     // Update is called once per frame
@@ -62,8 +66,11 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.layer == 3) 
         {
-            
             isDamaged = true;
+            if(isDamaged)
+            {
+                capsuleCollider2D.enabled = false;
+            }
         }
 
         if(other.CompareTag("Potion"))

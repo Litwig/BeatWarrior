@@ -2220,7 +2220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a67d94d6a8e6646a09077e9b181b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShakeAmount: 0.1
+  ShakeAmount: 0.5
   ShakeTime: 0.5
   isDamage: 0
 --- !u!1 &418648660
@@ -10494,7 +10494,7 @@ PrefabInstance:
     - target: {fileID: 5436846140081073099, guid: 52f755b7d615f344ea8588ef943db677, type: 3}
       propertyPath: characterSpawnScript
       value: 
-      objectReference: {fileID: 1526280884}
+      objectReference: {fileID: 1824033163}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52f755b7d615f344ea8588ef943db677, type: 3}
 --- !u!61 &5665364278975112564

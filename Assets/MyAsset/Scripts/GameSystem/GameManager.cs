@@ -67,9 +67,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Dead();
+        if(playerScript.isDamaged)
+        {
+            Dead();
+            playerScript.isDamaged = false;
+        }
+
         Score();
-        PotionHeal();
         PlayerRespawn();
     }
 
@@ -84,12 +88,10 @@ public class GameManager : MonoBehaviour
 
     private void Dead()
     {
-        if (playerScript.isDamaged == true) 
-        {
-            cameraShakeScript.isDamage = true;
-            StartCoroutine("ColorChange");
-            --playerInfoScript.PlayerHp;
-        }
+        cameraShakeScript.isDamage = true;
+        StartCoroutine(nameof(ColorChange));
+        --playerInfoScript.PlayerHp;
+
 
         if(playerInfoScript.PlayerHp<=0)
         {
@@ -98,19 +100,15 @@ public class GameManager : MonoBehaviour
             mapScrollScript.isGameOver = true;
             quadScript.isGameOver = true;
         }
+        //if collision with player and monster
+        //I want --PlayerHp
+        //but it Collision, than Player just dying
+        // Player : X(
 
-    }
-
-    private void PotionHeal()
-    {
-        if(playerScript.isPotion==true)
-        {
-            ++playerInfoScript.PlayerHp;
-            if(playerInfoScript.PlayerHp==3)
-            {
-                return;
-            }
-        }
+        //1. 대미지를 받았을 때, 2. 대미지를 받고 있을 때
+        //두 개 선언해서 대미지 받았을 때 1번거 활성화시켜주고
+        // 1번 활성화시키면 2번 활성화시키고
+        // 한번만 호출되어야 할 때는 두개 다 할성화시켜져 있어야 가능.
     }
 
     private void GameOver()
@@ -132,7 +130,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerObj.layer = 7;
         selectGreyScript.SpriteColor(Color.red);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(cameraShakeScript.ShakeTime);
         selectGreyScript.SpriteColor(Color.white);
         PlayerObj.layer = 8;
         playerScript.isDamaged = false;

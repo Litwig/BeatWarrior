@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     {
         Jump();
         CurrTime += Time.deltaTime;
+        Debug.Log("player bool: " + isDamaged);
     }
 
     private void Jump()
@@ -45,7 +46,6 @@ public class Player : MonoBehaviour
         {
             if (JumpCount > 0)
             {
-                
                 rigid2D.AddForce(Vector3.up * JumpPower, ForceMode2D.Impulse);
                 --JumpCount;
             }
@@ -66,10 +66,9 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.layer == 3) 
         {
-            isDamaged = true;
-            if(isDamaged)
+            if (!isDamaged)
             {
-                capsuleCollider2D.enabled = false;
+                isDamaged = true;
             }
         }
 

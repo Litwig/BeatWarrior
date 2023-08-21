@@ -29,10 +29,13 @@ public class HpUi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(playerScript.isDamaged==true)
+       if(playerScript.isDamaged)
        {
            animator[playerInfo.PlayerHp - 1].SetBool("isOff", true);
-       }
+            //playerScript.isDamaged = false;  
+        }
+
+      
     }    
 
    

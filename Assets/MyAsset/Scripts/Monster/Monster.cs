@@ -39,7 +39,6 @@ public class Monster : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("PlayerTouch");
             MonsterSpeed = 0;
             animator.SetTrigger("Dead");
             boxCollider.enabled = false;

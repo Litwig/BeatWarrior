@@ -4,8 +4,8 @@ public class CameraShake : MonoBehaviour
 {
     [SerializeField]
     private float ShakeAmount;
-    [SerializeField]
-    private float ShakeTime;
+
+    public float ShakeTime;
 
     private Vector3 initialPosition;
 

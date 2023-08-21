@@ -2109,7 +2109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2153910811388617434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3820,7 +3820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 789531609273624594}
   - component: {fileID: 4443370985170460101}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: BoxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

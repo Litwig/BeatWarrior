@@ -8768,6 +8768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824033162}
   - component: {fileID: 1824033163}
+  - component: {fileID: 1824033164}
   m_Layer: 0
   m_Name: PlayerSpawn
   m_TagString: Untagged
@@ -8807,6 +8808,23 @@ MonoBehaviour:
   - {fileID: 4868812839621767346, guid: b5818508798d13f4abaa10e5a5856f7c, type: 3}
   - {fileID: 5308059056049938374, guid: df40681f246b03b479581ce81bcf6d21, type: 3}
   Character: {fileID: 0}
+--- !u!114 &1824033164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824033161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663be577e0635ed49b04d258a8d7e6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GaugeArray:
+  - {fileID: 1485541800}
+  - {fileID: 709984124}
+  - {fileID: 959028156}
+  reSpawnScript: {fileID: 1824033163}
 --- !u!1 &1877091068
 GameObject:
   m_ObjectHideFlags: 0

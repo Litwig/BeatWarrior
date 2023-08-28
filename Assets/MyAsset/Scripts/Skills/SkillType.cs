@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SkillType : MonoBehaviour
 {
-    public enum SKILLTYPE { SHOOT_TYPE, FRONT_TYPE, STOP_TYPE, END_TYPE }
+    public enum SKILLTYPE { SHOOT_TYPE, FRONT_TYPE, STOP_TYPE, FINAL_TYPE ,END_TYPE }
 
     public SKILLTYPE enumSkillType;
 
@@ -58,6 +58,9 @@ public class SkillType : MonoBehaviour
             case SKILLTYPE.STOP_TYPE:
                 Instantiate(StopSkillObj, SkillPos[1].position, SkillPos[1].rotation);
                 Generate = false;
+                break;
+            case SKILLTYPE.FINAL_TYPE:
+
                 break;
         }
     }

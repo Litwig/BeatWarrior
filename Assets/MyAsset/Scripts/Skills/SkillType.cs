@@ -15,6 +15,8 @@ public class SkillType : MonoBehaviour
     private GameObject ShootSkillObj;
     [SerializeField]
     private GameObject StopSkillObj;
+    [SerializeField]
+    private GameObject FinalSkillObj;
 
     public bool Generate;
     [SerializeField]
@@ -59,8 +61,18 @@ public class SkillType : MonoBehaviour
                 Instantiate(StopSkillObj, SkillPos[1].position, SkillPos[1].rotation);
                 Generate = false;
                 break;
-            case SKILLTYPE.FINAL_TYPE:
 
+            case SKILLTYPE.FINAL_TYPE:
+                if (gameObject.CompareTag("IcePlayer"))
+                {
+                    Instantiate(FinalSkillObj, SkillPos[2].position, SkillPos[2].rotation);
+                }
+                else
+                {
+                    Instantiate(FinalSkillObj, SkillPos[1].position, SkillPos[1].rotation);
+                }
+              
+                Generate = false;
                 break;
         }
     }

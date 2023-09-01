@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 1408476344}
   m_Layer: 8
   m_Name: SkillPos
-  m_TagString: Untagged
+  m_TagString: IcePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,10 +124,43 @@ MonoBehaviour:
   - {fileID: 3993437701195774448, guid: bcb715eca11f7a74581643ca55e1ebd3, type: 3}
   ShootSkillObj: {fileID: 4984505361540801305, guid: eb879e77d3287e44d9861e8ad5f227e8, type: 3}
   StopSkillObj: {fileID: 3339756432364374950, guid: 806c2b12c59cf8b4386a15bf84beb5fd, type: 3}
+  FinalSkillObj: {fileID: 4858608649086741115, guid: 1e5859b028e937646913f10d7c5b831b, type: 3}
   Generate: 0
   SkillPos:
   - {fileID: 1347433701}
   - {fileID: 955333473}
+  - {fileID: 2137226640}
+--- !u!1 &2137226639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137226640}
+  m_Layer: 8
+  m_Name: FinalSkillPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2137226640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137226639}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.21, y: 1.46, z: 0.050999988}
+  m_LocalScale: {x: 1, y: 1, z: 1.7}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7646422107595076961}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &270212708692305343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,7 +2280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7646422107595076961
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2265,6 +2298,7 @@ RectTransform:
   - {fileID: 955333473}
   - {fileID: 1347433701}
   - {fileID: 7625603472343737113}
+  - {fileID: 2137226640}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}

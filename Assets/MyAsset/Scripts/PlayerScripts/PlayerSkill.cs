@@ -44,6 +44,12 @@ public class PlayerSkill : MonoBehaviour
             skillTypeScript.enumSkillType = SkillType.SKILLTYPE.FRONT_TYPE;
         }
 
+        if(Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            skillTypeScript.Generate = true;
+            skillTypeScript.enumSkillType = SkillType.SKILLTYPE.FINAL_TYPE;
+        }
+
        
 
     }

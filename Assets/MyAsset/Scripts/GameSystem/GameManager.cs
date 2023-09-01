@@ -1,51 +1,74 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
     #region SCORE
+
     private float TimerCount;
     private float Min;
     public float GetScore;
     public float Minute;
     private float SpeedUp;
-    #endregion
+    public int GaugeScore;
+
+    #endregion SCORE
 
     #region Player
+
     [SerializeField]
     private GameObject PlayerObj;
+
     private Player playerScript;
     private PlayerInfo playerInfoScript;
     public int PlayerScore;
     public bool isDead;
-    #endregion
+
+    #endregion Player
 
     #region Map
+
     [SerializeField]
     private GameObject SkyObject;
+
     [SerializeField]
     private GameObject[] MapPlatformObj;
+
     private QuadScript quadScript;
     private MapScroll mapScrollScript;
-    #endregion
+
+    #endregion Map
 
     #region SCRIPT
+
     [SerializeField]
     private SceneControll sceneControllScript;
+
     [SerializeField]
     private ReSpawn reSpawnScript;
+
     [SerializeField]
     private CameraShake cameraShakeScript;
+
     private SelectGrey selectGreyScript;
-    #endregion
+
+    private FinalSkillGauge finalSkillGaugeScript;
+
+    [SerializeField]
+    private PlayerSkill playerSkillScript;
+
+    [SerializeField]
+    private CharacterData characterDataScript;
+
+    #endregion SCRIPT
+
+    [SerializeField]
+    private GameObject[] GaugeArray;
 
     [SerializeField]
     private Transform PlayerSpawnPoint;
-    
 
-    void Start()
+    private void Start()
     {
         //yield return new WaitForSeconds(1f);
         GetScore = 0;
@@ -55,19 +78,28 @@ public class GameManager : MonoBehaviour
         playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
         selectGreyScript = PlayerObj.GetComponent<SelectGrey>();
         quadScript = SkyObject.GetComponent<QuadScript>();
+        playerSkillScript = PlayerObj.GetComponent<PlayerSkill>();
         selectGreyScript.ColorType = SelectGrey.COLORTYPE.STAGE_TYPE;
-        for(int mapScrollIndex = 0; mapScrollIndex < MapPlatformObj.Length; mapScrollIndex++)
+        characterDataScript = GameObject.FindWithTag("GameSystem").GetComponent<CharacterData>();
+
+        for (int mapScrollIndex = 0; mapScrollIndex < MapPlatformObj.Length; mapScrollIndex++)
         {
             mapScrollScript = MapPlatformObj[mapScrollIndex].GetComponent<MapScroll>();
+        }
+
+        for (int i = 0; i < GaugeArray.Length; ++i)
+        {
+            finalSkillGaugeScript = GaugeArray[i].GetComponent<FinalSkillGauge>();
+            //playerSkillScript.finalSkillGaugeScript = GaugeArray[characterDataScript.PlayerIndex].GetComponent<FinalSkillGauge>();
         }
 
         isDead = false;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(playerScript.isDamaged)
+        if (playerScript.isDamaged)
         {
             Dead();
             playerScript.isDamaged = false;
@@ -92,8 +124,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(nameof(ColorChange));
         --playerInfoScript.PlayerHp;
 
-
-        if(playerInfoScript.PlayerHp<=0)
+        if (playerInfoScript.PlayerHp <= 0)
         {
             GameOver();
             Debug.Log("Player Damage");
@@ -107,7 +138,7 @@ public class GameManager : MonoBehaviour
 
         //1. 대미지를 받았을 때, 2. 대미지를 받고 있을 때
         //두 개 선언해서 대미지 받았을 때 1번거 활성화시켜주고
-        // 1번 활성화시키면 2번 활성화시키고
+        // 1번 활성화 시키면 2번 활성화시키고
         // 한번만 호출되어야 할 때는 두개 다 할성화시켜져 있어야 가능.
     }
 
@@ -118,15 +149,14 @@ public class GameManager : MonoBehaviour
 
     private void PlayerRespawn()
     {
-        if(playerScript.isFall==true)
+        if (playerScript.isFall == true)
         {
             playerInfoScript.PlayerHp = 0;
             playerScript.isFall = false;
         }
-    }    
+    }
 
-
-    IEnumerator ColorChange()
+    private IEnumerator ColorChange()
     {
         PlayerObj.layer = 7;
         selectGreyScript.SpriteColor(Color.red);

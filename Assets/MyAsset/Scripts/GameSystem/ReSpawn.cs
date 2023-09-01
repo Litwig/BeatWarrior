@@ -1,24 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ReSpawn : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] CharacterArray;
-   //[SerializeField]
+
+    //[SerializeField]
     public GameObject Character;
 
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
         Character = Instantiate(CharacterArray[(int)CharacterData.instance.PlayerIndex]);
         Character.transform.position = transform.position;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
     }
 }

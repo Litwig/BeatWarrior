@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEditor;
 using UnityEngine;
-using UnityEditor;
-using System.IO;
 
 [CustomEditor(typeof(SpriteSync))]
 public class SPUM_Sync : Editor
@@ -12,13 +9,13 @@ public class SPUM_Sync : Editor
     {
         base.OnInspectorGUI();
         SpriteSync SPB = (SpriteSync)target;
-        if(SPB._mySprite.sprite != null)
+        if (SPB._mySprite.sprite != null)
         {
-            if (GUILayout.Button("Sync Pivot",GUILayout.Height(50))) 
+            if (GUILayout.Button("Sync Pivot", GUILayout.Height(50)))
             {
                 SPB.SyncPivot();
             }
-            if (GUILayout.Button("Remove Sprite",GUILayout.Height(50))) 
+            if (GUILayout.Button("Remove Sprite", GUILayout.Height(50)))
             {
                 SPB.RemoveSprite();
             }

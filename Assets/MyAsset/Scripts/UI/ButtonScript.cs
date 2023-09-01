@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +11,6 @@ public class ButtonScript : MonoBehaviour
 
     private void Start()
     {
-      
     }
 
     private void Update()
@@ -22,7 +20,7 @@ public class ButtonScript : MonoBehaviour
 
     public void PressKey()
     {
-        for(int i=0; i<toggle.Length; i++)
+        for (int i = 0; i < toggle.Length; i++)
         {
             if (toggle[i].isOn)
             {
@@ -33,6 +31,5 @@ public class ButtonScript : MonoBehaviour
                 button[i].SetActive(false);
             }
         }
-       
     }
 }

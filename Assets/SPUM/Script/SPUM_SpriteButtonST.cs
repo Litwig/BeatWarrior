@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 [ExecuteInEditMode]
 public class SPUM_SpriteButtonST : MonoBehaviour
 {
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     public bool _use;
     public Image _mainSprite;
     public int index;
@@ -18,25 +16,25 @@ public class SPUM_SpriteButtonST : MonoBehaviour
     public List<bool> _packageList = new List<bool>();
     public List<string> _packageNameList = new List<string>();
 
-    void Start()
+    private void Start()
     {
-        if(_mainSprite == null ) _mainSprite = transform.GetChild(0).GetChild(1).GetComponent<Image>();
-        if(_Manager == null ) _Manager = FindObjectOfType<SPUM_Manager>();
-        if(index < 10)
+        if (_mainSprite == null) _mainSprite = transform.GetChild(0).GetChild(1).GetComponent<Image>();
+        if (_Manager == null) _Manager = FindObjectOfType<SPUM_Manager>();
+        if (index < 10)
         {
-            if(_colorBG == null ) _colorBG = transform.GetChild(1).GetChild(0).GetComponent<Image>();
-            if(_LockBtn.Count == 0)
+            if (_colorBG == null) _colorBG = transform.GetChild(1).GetChild(0).GetComponent<Image>();
+            if (_LockBtn.Count == 0)
             {
                 _LockBtn.Add(transform.GetChild(1).GetChild(3).GetChild(0).gameObject);
                 _LockBtn.Add(transform.GetChild(1).GetChild(3).GetChild(1).gameObject);
-            } 
+            }
         }
     }
 
     public void SetUse(bool value)
     {
         _use = value;
-        if(_use)
+        if (_use)
         {
             _mainSprite.color = Color.red;
         }
@@ -46,14 +44,13 @@ public class SPUM_SpriteButtonST : MonoBehaviour
         }
     }
 
-
     public void DrawItem()
     {
-        if(index == 10)
+        if (index == 10)
         {
             _Manager.AllRandom();
         }
-        else if(index == 11)
+        else if (index == 11)
         {
             _Manager.SetInit();
         }
@@ -75,12 +72,12 @@ public class SPUM_SpriteButtonST : MonoBehaviour
 
     public void ResetSprite()
     {
-        _Manager.SetSprite(index,null,"",-1);
+        _Manager.SetSprite(index, null, "", -1);
     }
 
     public void ChangeLock()
     {
-        if(_LockBtn[0].activeInHierarchy)
+        if (_LockBtn[0].activeInHierarchy)
         {
             _LockBtn[0].SetActive(false);
             _LockBtn[1].SetActive(true);
@@ -91,5 +88,6 @@ public class SPUM_SpriteButtonST : MonoBehaviour
             _LockBtn[1].SetActive(false);
         }
     }
-    #endif
+
+#endif
 }

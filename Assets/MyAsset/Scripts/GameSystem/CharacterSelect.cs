@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class CharacterSelect : MonoBehaviour
 {
     [SerializeField]
@@ -13,9 +13,9 @@ public class CharacterSelect : MonoBehaviour
 
     public bool AnimBool;
 
-    private void Start() 
+    private void Start()
     {
-        if(!TryGetComponent(out toggle)) { Debug.Log("Toggle null"); }
+        if (!TryGetComponent(out toggle)) { Debug.Log("Toggle null"); }
     }
 
     private void Update()

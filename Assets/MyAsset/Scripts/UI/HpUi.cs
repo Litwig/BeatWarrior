@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HpUi : MonoBehaviour
 {
@@ -17,26 +15,22 @@ public class HpUi : MonoBehaviour
 
     [SerializeField]
     private ReSpawn characterSpawnScript;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         player = characterSpawnScript.Character;
         playerInfo = player.GetComponent<PlayerInfo>();
         playerScript = player.GetComponent<Player>();
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-       if(playerScript.isDamaged)
-       {
-           animator[playerInfo.PlayerHp - 1].SetBool("isOff", true);
-            //playerScript.isDamaged = false;  
+        if (playerScript.isDamaged)
+        {
+            animator[playerInfo.PlayerHp - 1].SetBool("isOff", true);
+            //playerScript.isDamaged = false;
         }
-
-      
-    }    
-
-   
+    }
 }

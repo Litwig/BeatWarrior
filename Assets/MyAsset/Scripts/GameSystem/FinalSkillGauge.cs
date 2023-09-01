@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class FinalSkillGauge : MonoBehaviour
@@ -8,28 +6,27 @@ public class FinalSkillGauge : MonoBehaviour
     [SerializeField]
     private GameObject[] GaugeArray;
 
-    [SerializeField]
     private int GaugeIndex;
 
     [SerializeField]
     private GameManager gameManager;
 
-    [SerializeField]
     public bool isShoot;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-        for (int i=0; i<GaugeArray.Length; i++)
+        GaugeIndex = (int)gameManager.GetScore / 1000;
+        for (int i = 0; i < GaugeArray.Length; i++)
         {
             GaugeArray[i].SetActive(false);
         }
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(isShoot)
+        if (isShoot)
         {
             GaugeZero();
         }
@@ -59,17 +56,16 @@ public class FinalSkillGauge : MonoBehaviour
         {
             StartCoroutine("GaugeCoolTime");
         }
-        else if(GaugeIndex<=0)
+        else if (GaugeIndex <= 0)
         {
             GaugeIndex = 0;
         }
     }
 
-    IEnumerator GaugeCoolTime()
+    private IEnumerator GaugeCoolTime()
     {
         GaugeIndex--;
         GaugeArray[GaugeIndex].SetActive(false);
         yield return new WaitForSeconds(1f);
     }
-
 }

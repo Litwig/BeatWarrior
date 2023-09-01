@@ -11,12 +11,11 @@ public class SceneControll : MonoBehaviour
 
     public void GotoTitleScene()
     {
-        
         SceneManager.LoadScene("StartScene");
     }
 
     public void PlayScene()
-    { 
+    {
         SceneManager.LoadScene("PlayScene");
         //isStart = true;
     }

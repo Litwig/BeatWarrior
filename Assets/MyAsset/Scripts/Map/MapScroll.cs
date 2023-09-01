@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MapScroll : MonoBehaviour
@@ -16,7 +13,8 @@ public class MapScroll : MonoBehaviour
 
     public bool isReroll = false;
     public bool isGameOver = false;
-    void Update()
+
+    private void Update()
     {
         transform.Translate(-1 * ScrollSpeed * Time.deltaTime, 0, 0);
         ScrollSpawn();
@@ -25,7 +23,7 @@ public class MapScroll : MonoBehaviour
 
     private void ScrollSpawn()
     {
-        if (transform.position.x <= EndPosition) 
+        if (transform.position.x <= EndPosition)
         {
             transform.position = new Vector3(StartPosition, 0, 0);
             isReroll = true;
@@ -34,11 +32,11 @@ public class MapScroll : MonoBehaviour
 
     private void ScrollEnd()
     {
-        if(isGameOver==true)
+        if (isGameOver == true)
         {
             ScrollSpeed -= Time.deltaTime;
-            
-            if(ScrollSpeed <= 0)
+
+            if (ScrollSpeed <= 0)
             {
                 return;
             }

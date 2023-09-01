@@ -1190,6 +1190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillTypeScript: {fileID: 1914965848}
+  SkillGaugeBar: {fileID: 0}
+  finalSkillGaugeScript: {fileID: 0}
 --- !u!114 &-8878245679331864785
 MonoBehaviour:
   m_ObjectHideFlags: 0

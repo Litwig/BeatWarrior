@@ -1,34 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEditor;
 using UnityEngine;
-using UnityEditor;
 
 [ExecuteInEditMode]
 public class SpriteSync : MonoBehaviour
 {
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
+
     [HideInInspector]
     public SPUM_SpriteEditManager _manager;
+
     [HideInInspector]
     public SpriteRenderer _mySprite;
+
     public Sprite _nowSprite;
 
-    void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
-        if(_nowSprite==null)
+        if (_nowSprite == null)
         {
-            Gizmos.color = new Color(1,1,1,0.5f);
+            Gizmos.color = new Color(1, 1, 1, 0.5f);
             Gizmos.DrawSphere(this.transform.position, 0.2f);
             Handles.Label(transform.position, gameObject.name);
         }
-        
     }
-    
-    void Update()
-    {
-        if(Selection.activeGameObject != this.gameObject) return;
 
-        if(_mySprite==null)
+    private void Update()
+    {
+        if (Selection.activeGameObject != this.gameObject) return;
+
+        if (_mySprite == null)
         {
             _mySprite = transform.GetComponent<SpriteRenderer>();
         }
@@ -37,7 +37,7 @@ public class SpriteSync : MonoBehaviour
             _mySprite.sprite = _nowSprite;
         }
 
-        if(_manager==null)
+        if (_manager == null)
         {
             _manager = GameObject.FindObjectOfType<SPUM_SpriteEditManager>();
         }
@@ -45,11 +45,10 @@ public class SpriteSync : MonoBehaviour
 
     public void SyncPivot()
     {
-        if(_mySprite.sprite!=null)
+        if (_mySprite.sprite != null)
         {
             _manager.SyncPivotProcess(_mySprite);
         }
-        
     }
 
     public void RemoveSprite()
@@ -58,5 +57,6 @@ public class SpriteSync : MonoBehaviour
         _mySprite.sprite = null;
         _nowSprite = null;
     }
-    #endif
+
+#endif
 }

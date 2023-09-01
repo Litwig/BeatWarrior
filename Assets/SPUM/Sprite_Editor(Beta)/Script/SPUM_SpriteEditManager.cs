@@ -1,13 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using UnityEditor;
+using UnityEngine;
 
 [ExecuteInEditMode]
 public class SPUM_SpriteEditManager : MonoBehaviour
 {
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     public SPUM_SpriteList _spriteObj;
+
     // public Sprite _hair;
     // public Sprite _mustache;
     // public Sprite _helmet1;
@@ -20,24 +20,24 @@ public class SPUM_SpriteEditManager : MonoBehaviour
     // public Sprite _back;
     public List<SpriteRenderer> _syncList = new List<SpriteRenderer>();
 
-    void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         // Gizmos.color = Color.red;
         // Gizmos.DrawSphere(this.transform.position, 0.1f);
     }
 
-    void Start()
+    private void Start()
     {
-
     }
 
-    void Update()
+    private void Update()
     {
         // if(Selection.activeGameObject == this.gameObject)
         // {
         //     SyncSprite();
         // }
     }
+
     // //Sync all sprite added.
     // public void SyncSprite()
     // {
@@ -55,8 +55,8 @@ public class SPUM_SpriteEditManager : MonoBehaviour
     //     SetMultiple(_armor,_syncList[10].GetComponent<SpriteSync>()._nowSprite,"Right");
     //     SetMultiple(_armor,_syncList[11].GetComponent<SpriteSync>()._nowSprite,"Left");
 
-    //     SetWeapon(_weaponRight,0);  
-    //     SetWeapon(_weaponLeft,1);        
+    //     SetWeapon(_weaponRight,0);
+    //     SetWeapon(_weaponLeft,1);
 
     //     _syncList[16].GetComponent<SpriteSync>()._nowSprite=_back;
     // }
@@ -84,22 +84,22 @@ public class SPUM_SpriteEditManager : MonoBehaviour
 
     public void SyncPivotProcess(SpriteRenderer SR)
     {
-        if(SR.sprite!=null) SetPivot(SR);
+        if (SR.sprite != null) SetPivot(SR);
     }
 
     public void SetMultiple(Texture2D sp, Sprite ttSP, string nameCode)
     {
-        if(sp==null) return;
+        if (sp == null) return;
 
-        string spritePath = AssetDatabase.GetAssetPath( sp );
+        string spritePath = AssetDatabase.GetAssetPath(sp);
         Object[] sprites = AssetDatabase.LoadAllAssetsAtPath(spritePath);
 
-        foreach(object obj in sprites)
+        foreach (object obj in sprites)
         {
-            if(obj.GetType() == typeof(Sprite))
+            if (obj.GetType() == typeof(Sprite))
             {
                 Sprite tSP = (Sprite)obj;
-                if(tSP.name == nameCode)
+                if (tSP.name == nameCode)
                 {
                     ttSP = tSP;
                 }
@@ -109,12 +109,12 @@ public class SPUM_SpriteEditManager : MonoBehaviour
 
     public void SetWeapon(Sprite sp, int Type)
     {
-        if(sp!=null)
+        if (sp != null)
         {
             string tRWName = sp.name;
-            if(Type == 0) //오른쪽
+            if (Type == 0) //오른쪽
             {
-                if(tRWName.Contains("Shield"))
+                if (tRWName.Contains("Shield"))
                 {
                     //방패
                     _syncList[12].GetComponent<SpriteSync>()._nowSprite = null;
@@ -128,7 +128,7 @@ public class SPUM_SpriteEditManager : MonoBehaviour
             }
             else //오른쪽
             {
-                if(tRWName.Contains("Shield"))
+                if (tRWName.Contains("Shield"))
                 {
                     //방패
                     _syncList[14].GetComponent<SpriteSync>()._nowSprite = null;
@@ -140,36 +140,35 @@ public class SPUM_SpriteEditManager : MonoBehaviour
                     _syncList[15].GetComponent<SpriteSync>()._nowSprite = null;
                 }
             }
-            
         }
     }
 
     public void EmptyAllSprite()
     {
-        for(var i = 0 ; i < _syncList.Count;i++)
+        for (var i = 0; i < _syncList.Count; i++)
         {
             _syncList[i].sprite = null;
             _syncList[i].GetComponent<SpriteSync>()._nowSprite = null;
-        }        
+        }
     }
+
     //Reset all sprite added.
 
     public void SetPivot(SpriteRenderer _sprite)
     {
-        if( _sprite.transform.localPosition.x ==0 && _sprite.transform.localPosition.y ==0) return;
+        if (_sprite.transform.localPosition.x == 0 && _sprite.transform.localPosition.y == 0) return;
         string path = AssetDatabase.GetAssetPath(_sprite.sprite.texture);
-        
 
         TextureImporter ti = (TextureImporter)AssetImporter.GetAtPath(path);
-        if(ti.spritesheet.Length > 1 )
+        if (ti.spritesheet.Length > 1)
         {
             ti.isReadable = true;
             List<SpriteMetaData> newData = new List<SpriteMetaData>();
-            for(var i = 0 ; i < ti.spritesheet.Length;i++)
+            for (var i = 0; i < ti.spritesheet.Length; i++)
             {
                 SpriteMetaData tD = ti.spritesheet[i];
                 tD.alignment = (int)SpriteAlignment.Custom;
-                if( _sprite.sprite.name == tD.name)
+                if (_sprite.sprite.name == tD.name)
                 {
                     float tXSize = tD.rect.size.x;
                     float tYSize = tD.rect.size.y;
@@ -180,17 +179,17 @@ public class SPUM_SpriteEditManager : MonoBehaviour
                     float ttX = tX / tXSize * 0.5f;
                     float ttY = tY / tYSize * 0.5f;
 
-                    float rX = 0.5f-ttX;
-                    float rY = 0.5f-ttY;
-                    tD.pivot = new Vector2(rX,rY);
-                    ti.spritesheet[i]  = tD;
+                    float rX = 0.5f - ttX;
+                    float rY = 0.5f - ttY;
+                    tD.pivot = new Vector2(rX, rY);
+                    ti.spritesheet[i] = tD;
                 }
                 newData.Add(tD);
             }
 
             ti.spritesheet = newData.ToArray();
             AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
-            
+
             ti.isReadable = false;
         }
         else
@@ -204,10 +203,10 @@ public class SPUM_SpriteEditManager : MonoBehaviour
             float ttX = tX / tXSize * 0.5f;
             float ttY = tY / tYSize * 0.5f;
 
-            float rX = 0.5f-ttX;
-            float rY = 0.5f-ttY;
+            float rX = 0.5f - ttX;
+            float rY = 0.5f - ttY;
 
-            Vector2 newPivot = new Vector2(rX,rY);
+            Vector2 newPivot = new Vector2(rX, rY);
             ti.spritePivot = newPivot;
             TextureImporterSettings texSettings = new TextureImporterSettings();
             ti.ReadTextureSettings(texSettings);
@@ -216,7 +215,8 @@ public class SPUM_SpriteEditManager : MonoBehaviour
             ti.SaveAndReimport();
         }
 
-        _sprite.transform.localPosition = new Vector3(0,0,0);
+        _sprite.transform.localPosition = new Vector3(0, 0, 0);
     }
-    #endif
+
+#endif
 }

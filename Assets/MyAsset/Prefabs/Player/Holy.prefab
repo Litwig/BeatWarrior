@@ -2272,6 +2272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillTypeScript: {fileID: 383422370}
+  finalSkillGaugeScript: {fileID: 0}
 --- !u!114 &8282402070220214234
 MonoBehaviour:
   m_ObjectHideFlags: 0

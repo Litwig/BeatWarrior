@@ -1,11 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectGrey : MonoBehaviour
 {
-    public enum COLORTYPE { SELECT_TYPE, STAGE_TYPE}
+    public enum COLORTYPE
+    { SELECT_TYPE, STAGE_TYPE }
+
     public COLORTYPE ColorType;
+
     [SerializeField]
     private SPUM_SpriteList spriteList;
 
@@ -20,8 +22,9 @@ public class SelectGrey : MonoBehaviour
     private List<SpriteRenderer> Spum_backList = new List<SpriteRenderer>();
 
     public bool isSelect;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Spum_itemList = spriteList._itemList;
         Spum_eyeList = spriteList._eyeList;
@@ -35,9 +38,9 @@ public class SelectGrey : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        switch(ColorType)
+        switch (ColorType)
         {
             case COLORTYPE.SELECT_TYPE:
                 if (isSelect)
@@ -49,16 +52,15 @@ public class SelectGrey : MonoBehaviour
                     SpriteColor(Color.grey);
                 }
                 break;
+
             case COLORTYPE.STAGE_TYPE:
                 break;
         }
-    
-
     }
 
     public void SpriteColor(Color color)
     {
-        for(int i=0; i<Spum_itemList.Count; i++)
+        for (int i = 0; i < Spum_itemList.Count; i++)
         {
             Spum_itemList[i].color = color;
         }

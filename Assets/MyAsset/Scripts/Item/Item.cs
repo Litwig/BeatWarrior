@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -14,12 +12,13 @@ public class Item : MonoBehaviour
 
     private AudioSource audioSource;
     private AudioClip clip;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        if(!TryGetComponent<Animator>(out animator)) { Debug.Log("null animator"); }
-        if(!TryGetComponent<CircleCollider2D>(out circleCollider2D)) { Debug.Log("null circle"); }
-        if(!TryGetComponent<SpriteRenderer>(out spriteRenderer)) { Debug.Log("Sprite null"); }
+        if (!TryGetComponent<Animator>(out animator)) { Debug.Log("null animator"); }
+        if (!TryGetComponent<CircleCollider2D>(out circleCollider2D)) { Debug.Log("null circle"); }
+        if (!TryGetComponent<SpriteRenderer>(out spriteRenderer)) { Debug.Log("Sprite null"); }
         gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         if (!TryGetComponent<AudioSource>(out audioSource)) { Debug.Log("null audio"); }
         clip = audioSource.clip;
@@ -27,13 +26,13 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            if(this.CompareTag("BlueItem"))
+            if (this.CompareTag("BlueItem"))
             {
                 gameManager.PlayerScore += 300;
             }
-            else if(this.CompareTag("PinkItem"))
+            else if (this.CompareTag("PinkItem"))
             {
                 gameManager.PlayerScore += 100;
             }

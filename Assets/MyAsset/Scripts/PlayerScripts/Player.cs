@@ -4,8 +4,10 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody2D rigid2D;
+
     [SerializeField]
     private float JumpPower;
+
     [SerializeField]
     private int JumpCount;
 
@@ -24,16 +26,16 @@ public class Player : MonoBehaviour
     private float CurrTime;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         isFall = false;
         isDamaged = false;
         JumpCount = 1;
-        if(!TryGetComponent(out capsuleCollider2D)) { Debug.Log("Capsule is null"); }
+        if (!TryGetComponent(out capsuleCollider2D)) { Debug.Log("Capsule is null"); }
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Jump();
         CurrTime += Time.deltaTime;
@@ -42,7 +44,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (JumpCount > 0)
             {
@@ -50,21 +52,19 @@ public class Player : MonoBehaviour
                 --JumpCount;
             }
             else
-            { 
+            {
             }
-        
         }
     }
 
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Falling"))
+        if (other.CompareTag("Falling"))
         {
             isFall = true;
         }
 
-        if (other.gameObject.layer == 3) 
+        if (other.gameObject.layer == 3)
         {
             if (!isDamaged)
             {
@@ -72,17 +72,17 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(other.CompareTag("Potion"))
+        if (other.CompareTag("Potion"))
         {
             isPotion = true;
         }
 
-        if(other.CompareTag("Item"))
+        if (other.CompareTag("Item"))
         {
             ItemGet = true;
         }
 
-        if(other.CompareTag("Ground"))
+        if (other.CompareTag("Ground"))
         {
             JumpCount = 1;
         }
@@ -90,7 +90,5 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-     
     }
-
 }

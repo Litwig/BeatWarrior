@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAudio : MonoBehaviour
@@ -8,18 +6,20 @@ public class PlayerAudio : MonoBehaviour
 
     [SerializeField]
     private AudioClip JumpClip;
+
     [SerializeField]
     private AudioClip HitClip;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        if(!TryGetComponent<AudioSource>(out audioSource)) { Debug.Log("audio"); }
+        if (!TryGetComponent<AudioSource>(out audioSource)) { Debug.Log("audio"); }
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             audioSource.clip = JumpClip;
             audioSource.Play();
@@ -28,7 +28,7 @@ public class PlayerAudio : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.layer ==3)
+        if (other.gameObject.layer == 3)
         {
             audioSource.clip = HitClip;
             audioSource.Play();

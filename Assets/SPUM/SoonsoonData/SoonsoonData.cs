@@ -1,15 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine;
 
 public class SoonsoonData
 {
-    
-    // Start is called before the first frame updateprivate 
-    static SoonsoonData instance = null;
+    // Start is called before the first frame updateprivate
+    private static SoonsoonData instance = null;
+
     public static SoonsoonData Instance
     {
         get
@@ -22,13 +22,13 @@ public class SoonsoonData
         }
     }
 
-    private SoonsoonData(){}
-
+    private SoonsoonData()
+    { }
 
     [Serializable]
     public class SoonData
     {
-        public List<Dictionary<string,bool>> packageList = new List<Dictionary<string,bool>>();
+        public List<Dictionary<string, bool>> packageList = new List<Dictionary<string, bool>>();
 
         public List<string> _savedColorList = new List<string>();
     }
@@ -39,7 +39,6 @@ public class SoonsoonData
     public bool _gifAlphaTrigger; // for using gif trigger at Soonsoon Exporter.
     public Color _gifBasicColor; //for using gif bg color at Soonsoon Exporter.
     public Color _alphaColor; // for using gif alpha color at Soonsoon Exporter.
-
 
     public void SaveData()
     {
@@ -59,13 +58,12 @@ public class SoonsoonData
         }
     }
 
-
     private void FileSaveToPrefab()
     {
         var b = new BinaryFormatter();
         var m = new MemoryStream();
-        b.Serialize(m , _soonData2);
-        PlayerPrefs.SetString("SoonsoonSave2",Convert.ToBase64String(m.GetBuffer())); 
+        b.Serialize(m, _soonData2);
+        PlayerPrefs.SetString("SoonsoonSave2", Convert.ToBase64String(m.GetBuffer()));
     }
 
     public IEnumerator LoadData()
@@ -75,7 +73,7 @@ public class SoonsoonData
         {
             LoadProcess();
         }
-        catch( System.Exception e)
+        catch (System.Exception e)
         {
             Debug.Log(" Failed to load Data...");
             Debug.Log(e.ToString());
@@ -83,11 +81,12 @@ public class SoonsoonData
 
         yield return new WaitForSecondsRealtime(0.1f);
     }
+
     public void LoadProcess()
     {
         Debug.Log("Trying Loading data ...");
 
-        if(!PlayerPrefs.HasKey("SoonsoonSave2"))
+        if (!PlayerPrefs.HasKey("SoonsoonSave2"))
         {
             Debug.Log("You don't use save data yet.");
         }
@@ -95,14 +94,14 @@ public class SoonsoonData
         {
             string _str = PlayerPrefs.GetString("SoonsoonSave2");
 
-            if( _str.Length > 0)
+            if (_str.Length > 0)
             {
                 string _tmpStr = PlayerPrefs.GetString("SoonsoonSave2");
-                if(!string.IsNullOrEmpty(_tmpStr)) 
+                if (!string.IsNullOrEmpty(_tmpStr))
                 {
                     var b = new BinaryFormatter();
                     var m = new MemoryStream(Convert.FromBase64String(_tmpStr));
-                    _soonData2 = (SoonData) b.Deserialize(m);
+                    _soonData2 = (SoonData)b.Deserialize(m);
                     Debug.Log("Load Successful!!");
                 }
             }
@@ -112,37 +111,35 @@ public class SoonsoonData
     public void SavePackageData()
     {
         SoonsoonData.instance._soonData2.packageList.Clear();
-        #if UNITY_EDITOR
-        for( var i = 0 ; i < _spumManager._textureList.Count;i++)
+#if UNITY_EDITOR
+        for (var i = 0; i < _spumManager._textureList.Count; i++)
         {
-            Dictionary<string,bool> tList = new Dictionary<string,bool>();
-            for(var j = 0 ; j < _spumManager._textureList[i]._packageList.Count;j++)
+            Dictionary<string, bool> tList = new Dictionary<string, bool>();
+            for (var j = 0; j < _spumManager._textureList[i]._packageList.Count; j++)
             {
-                tList.Add(_spumManager._textureList[i]._packageNameList[j],_spumManager._textureList[i]._packageList[j]);
+                tList.Add(_spumManager._textureList[i]._packageNameList[j], _spumManager._textureList[i]._packageList[j]);
             }
             SoonsoonData.instance._soonData2.packageList.Add(tList);
-            
         }
-        
+
         SaveData();
-        #endif
+#endif
     }
 
     public void LoadPackageData()
     {
-        #if UNITY_EDITOR
-        if(_soonData2.packageList==null) return;
-        if(_soonData2.packageList.Count ==0 ) return;
+#if UNITY_EDITOR
+        if (_soonData2.packageList == null) return;
+        if (_soonData2.packageList.Count == 0) return;
 
-
-        for( var i = 0 ; i < _spumManager._textureList.Count;i++)
+        for (var i = 0; i < _spumManager._textureList.Count; i++)
         {
             List<bool> tList = new List<bool>();
 
-            for(var j = 0 ; j < _spumManager._textureList[i]._packageList.Count;j++)
+            for (var j = 0; j < _spumManager._textureList[i]._packageList.Count; j++)
             {
                 string tName = _spumManager._textureList[i]._packageNameList[j];
-                if(_soonData2.packageList[i].ContainsKey(tName))
+                if (_soonData2.packageList[i].ContainsKey(tName))
                 {
                     tList.Add(_soonData2.packageList[i][tName]);
                 }
@@ -154,13 +151,13 @@ public class SoonsoonData
 
             _spumManager._textureList[i]._packageList.Clear();
 
-            for ( var j = 0 ; j < tList.Count;j++)
+            for (var j = 0; j < tList.Count; j++)
             {
-                 _spumManager._textureList[i]._packageList.Add(tList[j]);
-            } 
+                _spumManager._textureList[i]._packageList.Add(tList[j]);
+            }
         }
 
         _spumManager.LinkPackageList();
-        #endif
+#endif
     }
 }

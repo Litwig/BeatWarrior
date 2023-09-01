@@ -4,23 +4,26 @@ public class HowToPlay : MonoBehaviour
 {
     [SerializeField]
     private GameObject FirstPanel;
+
     [SerializeField]
     private GameObject SecondPanel;
 
     [SerializeField]
     private GameObject HowToPlayPanel;
+
     [SerializeField]
     private GameObject TitlePanel;
-    void Start()
+
+    private void Start()
     {
-        
     }
 
     public void FirstPanelOn()
     {
         FirstPanel.SetActive(true);
-        SecondPanel.SetActive(false); 
+        SecondPanel.SetActive(false);
     }
+
     public void SecondPanelOn()
     {
         SecondPanel.SetActive(true);

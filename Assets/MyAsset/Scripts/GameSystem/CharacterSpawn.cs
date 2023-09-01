@@ -1,24 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterSpawn : MonoBehaviour
 {
     //캐릭터 스폰해줌
-    public enum PLAERTYPE { BLACKMAGE, HOLYMAGE, ICEMAGE, MAGE_COUNT }
+    public enum PLAERTYPE
+    { BLACKMAGE, HOLYMAGE, ICEMAGE, MAGE_COUNT }
+
     public PLAERTYPE playerType = PLAERTYPE.MAGE_COUNT;
 
     [SerializeField]
     private GameObject[] CharacterArray;
-    public GameObject CharacterPrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    public GameObject CharacterPrefab;
+
+    // Start is called before the first frame update
+    private void Start()
+    {
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         CharacterLoad();
     }

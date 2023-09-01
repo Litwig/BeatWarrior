@@ -1,6 +1,4 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CharacterInfoUI : MonoBehaviour
 {
@@ -9,11 +7,13 @@ public class CharacterInfoUI : MonoBehaviour
 
     [SerializeField]
     private GameObject[] Character;
+
     [SerializeField]
     private GameObject[] CharacterInfoArray;
 
     [SerializeField]
     private CharacterData characterData_Script;
+
     private void Start()
     {
         InfoPanel.SetActive(false);
@@ -22,20 +22,19 @@ public class CharacterInfoUI : MonoBehaviour
 
     private void Update()
     {
-      
     }
+
     public void DarkMageInfoActive()
     {
         InfoPanel.SetActive(true);
 
-        for (int i=0; i<3; i++)
+        for (int i = 0; i < 3; i++)
         {
-            if(i==0)
+            if (i == 0)
             {
                 Character[i].SetActive(true);
                 CharacterInfoArray[i].SetActive(true);
             }
-
             else
             {
                 Character[i].SetActive(false);
@@ -43,8 +42,8 @@ public class CharacterInfoUI : MonoBehaviour
             }
         }
     }
-    
-    public void HolyMageInfoActive() 
+
+    public void HolyMageInfoActive()
     {
         InfoPanel.SetActive(true);
         for (int i = 0; i < 3; i++)
@@ -54,15 +53,14 @@ public class CharacterInfoUI : MonoBehaviour
                 Character[i].SetActive(true);
                 CharacterInfoArray[i].SetActive(true);
             }
-
             else
             {
                 Character[i].SetActive(false);
                 CharacterInfoArray[i].SetActive(false);
             }
         }
-    }  
-    
+    }
+
     public void IceMageInfoActive()
     {
         InfoPanel.SetActive(true);

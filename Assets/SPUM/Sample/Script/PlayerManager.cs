@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -17,34 +16,34 @@ public class PlayerManager : MonoBehaviour
     public Transform _goalObjCircle;
 
     public bool _generate;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(_generate)
+        if (_generate)
         {
             GetPlayerList();
             _generate = false;
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if(hit.collider != null)
+            if (hit.collider != null)
             {
-                if(hit.collider.CompareTag("Player"))
+                if (hit.collider.CompareTag("Player"))
                 {
                     _nowObj = hit.collider.GetComponent<PlayerObj>();
                 }
                 else
                 {
                     //Set move Player object to this point
-                    if(_nowObj!=null)
+                    if (_nowObj != null)
                     {
                         Vector2 goalPos = hit.point;
                         _goalObjCircle.transform.position = hit.point;
@@ -54,7 +53,7 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
-        if(_nowObj!=null)
+        if (_nowObj != null)
         {
             _playerObjCircle.transform.position = _nowObj.transform.position;
         }
@@ -70,23 +69,22 @@ public class PlayerManager : MonoBehaviour
 
         int sColumnNum = _columnNum;
 
-        for(var i = 0 ; i < _savedUnitList.Count;i++)
+        for (var i = 0; i < _savedUnitList.Count; i++)
         {
-            if(i > sColumnNum-1)
+            if (i > sColumnNum - 1)
             {
                 numYStart -= 1f;
                 numXStart -= numX * _columnNum;
                 sColumnNum += _columnNum;
             }
-            
+
             GameObject ttObj = Instantiate(_prefabObj.gameObject) as GameObject;
             ttObj.transform.SetParent(_playerPool);
-            ttObj.transform.localScale = new Vector3(1,1,1);
-            
+            ttObj.transform.localScale = new Vector3(1, 1, 1);
 
             GameObject tObj = Instantiate(_savedUnitList[i]) as GameObject;
             tObj.transform.SetParent(ttObj.transform);
-            tObj.transform.localScale = new Vector3(1,1,1);
+            tObj.transform.localScale = new Vector3(1, 1, 1);
             tObj.transform.localPosition = Vector3.zero;
 
             ttObj.name = _savedUnitList[i].name;
@@ -96,10 +94,9 @@ public class PlayerManager : MonoBehaviour
 
             tObjST._prefabs = tObjSTT;
 
-            ttObj.transform.localPosition = new Vector3(numXStart + numX * i,numYStart + numY,0);
+            ttObj.transform.localPosition = new Vector3(numXStart + numX * i, numYStart + numY, 0);
 
             _playerList.Add(tObjST);
-            
         }
     }
 }

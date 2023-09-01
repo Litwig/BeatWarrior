@@ -1,26 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class RandomSpawn : MonoBehaviour
 {
- 
     [SerializeField]
     private GameObject[] SpawnObject;
+
     [SerializeField]
     private Transform[] SpawnTransform;
 
     [SerializeField]
     private int SpawnLimit;
+
     [SerializeField]
     private int SpawnCount;
+
     [SerializeField]
     private MapScroll mapScrollScript;
 
     [SerializeField]
     private bool[] isSpawn;
-
 
     private float CurrTime;
     private float SpawnTime = 1f;
@@ -29,8 +27,7 @@ public class RandomSpawn : MonoBehaviour
     {
         isSpawn = new bool[SpawnTransform.Length];
 
-        
-        for(int i=0; i<SpawnTransform.Length; ++i)
+        for (int i = 0; i < SpawnTransform.Length; ++i)
         {
             isSpawn[i] = false;
         }
@@ -45,12 +42,10 @@ public class RandomSpawn : MonoBehaviour
             {
                 SpawnEnemy(x);
             }
-
         }
 
         CurrTime += Time.deltaTime;
         MapScrollComplete();
-
     }
 
     private void SpawnEnemy(int randNum)
@@ -63,14 +58,13 @@ public class RandomSpawn : MonoBehaviour
         Debug.Assert(isSpawn[randNum], "RandNum");
     }
 
-
     private void MapScrollComplete()
     {
-        if(mapScrollScript.isReroll==true)
+        if (mapScrollScript.isReroll == true)
         {
             SpawnCount = 0;
             mapScrollScript.isReroll = false;
-            for(int i=0; i<SpawnTransform.Length; ++i)
+            for (int i = 0; i < SpawnTransform.Length; ++i)
             {
                 isSpawn[i] = false;
             }

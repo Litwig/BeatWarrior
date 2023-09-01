@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MapMonster : MonoBehaviour
@@ -11,7 +9,6 @@ public class MapMonster : MonoBehaviour
 
     private int MonsterIndex;
 
-
     private int MonsterCount;
     private int MonsterMaxCount;
 
@@ -20,16 +17,16 @@ public class MapMonster : MonoBehaviour
     private bool isCanSpawn;
 
     private MapScroll mapScrollScript;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        if(!TryGetComponent<BoxCollider2D>(out boxCollider2D)) { Debug.Log("BoxCollider2D is null"); }
-        if(!TryGetComponent<MapScroll>(out mapScrollScript)) { Debug.Log("MapScroll Script is null"); }
-        
+        if (!TryGetComponent<BoxCollider2D>(out boxCollider2D)) { Debug.Log("BoxCollider2D is null"); }
+        if (!TryGetComponent<MapScroll>(out mapScrollScript)) { Debug.Log("MapScroll Script is null"); }
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         MonsterMaxCount = Random.Range(1, 5);
         MonsterSpawn();
@@ -47,7 +44,7 @@ public class MapMonster : MonoBehaviour
 
     private void MonsterSpawn()
     {
-        if(isCanSpawn)
+        if (isCanSpawn)
         {
             float BoxCollider_x = boxCollider2D.size.x;
             BoxCollider_x = Random.Range(0, BoxCollider_x);
@@ -61,25 +58,23 @@ public class MapMonster : MonoBehaviour
             ++MonsterCount;
             MonsterSpawnCoolTime = 3f;
         }
-      
         else
         {
             return;
         }
-
     }
 
     private void ReSpawnMonster()
     {
-        if(mapScrollScript.isReroll==true)
+        if (mapScrollScript.isReroll == true)
         {
             MonsterCount = 0;
             mapScrollScript.isReroll = false;
         }
-    }    
+    }
 
     private void SpawnCoolTime()
     {
-        MonsterSpawnCoolTime -= Time.deltaTime;        
+        MonsterSpawnCoolTime -= Time.deltaTime;
     }
 }

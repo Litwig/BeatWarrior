@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.TextCore.Text;
-using UnityEngine.UI;
 
 public class GaugeUI : MonoBehaviour
 {
@@ -11,20 +9,17 @@ public class GaugeUI : MonoBehaviour
     private ReSpawn reSpawnScript;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         for (int i = 0; i < GaugeArray.Length; i++)
         {
             if (i == CharacterData.instance.PlayerIndex)
                 GaugeArray[i].SetActive(true);
-
             else
                 GaugeArray[i].SetActive(false);
         }

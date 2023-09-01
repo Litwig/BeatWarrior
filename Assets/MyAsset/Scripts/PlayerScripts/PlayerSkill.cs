@@ -1,29 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerSkill : MonoBehaviour
 {
-
     [SerializeField]
     private SkillType skillTypeScript;
+
+    public FinalSkillGauge finalSkillGaugeScript;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        if (!finalSkillGaugeScript)
+            Debug.Log("null");
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         SkillKeySet();
-
     }
 
     public void SkillKeySet()
     {
         //Left = Fireball
-        //Right = Waterball
+        //Right = Water
         //Up = Earth
 
         if (Input.GetKeyDown(KeyCode.LeftArrow)) //1Skill
@@ -32,25 +32,26 @@ public class PlayerSkill : MonoBehaviour
             skillTypeScript.enumSkillType = SkillType.SKILLTYPE.SHOOT_TYPE;
         }
 
-        if(Input.GetKeyDown(KeyCode.RightArrow)) //3Skill
+        if (Input.GetKeyDown(KeyCode.RightArrow)) //3Skill
         {
             skillTypeScript.Generate = true;
             skillTypeScript.enumSkillType = SkillType.SKILLTYPE.STOP_TYPE;
         }
 
-        if(Input.GetKeyDown(KeyCode.UpArrow)) //Skill2
+        if (Input.GetKeyDown(KeyCode.UpArrow)) //Skill2
         {
             skillTypeScript.Generate = true;
             skillTypeScript.enumSkillType = SkillType.SKILLTYPE.FRONT_TYPE;
         }
 
-        if(Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            skillTypeScript.Generate = true;
-            skillTypeScript.enumSkillType = SkillType.SKILLTYPE.FINAL_TYPE;
+            if (!finalSkillGaugeScript.isShoot)
+            {
+                skillTypeScript.Generate = true;
+                skillTypeScript.enumSkillType = SkillType.SKILLTYPE.FINAL_TYPE;
+                finalSkillGaugeScript.isShoot = true;
+            }
         }
-
-       
-
     }
 }

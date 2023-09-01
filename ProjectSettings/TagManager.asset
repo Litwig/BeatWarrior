@@ -21,6 +21,9 @@ TagManager:
   - Skill
   - GameSystem
   - IcePlayer
+  - DarkUI
+  - HolyUI
+  - IceUI
   layers:
   - Default
   - TransparentFX

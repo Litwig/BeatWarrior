@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SPUM_PreviewItem : MonoBehaviour
 {
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     public List<GameObject> _objList = new List<GameObject>();
     public Image _emptyImage;
     public Image _basicImage;
@@ -17,18 +16,16 @@ public class SPUM_PreviewItem : MonoBehaviour
     public List<Image> _eyeSetList = new List<Image>();
     public List<Image> _horseList = new List<Image>();
 
-
-
     public void ShowObj(int num)
     {
-        if(num!=-2)
+        if (num != -2)
         {
             _emptyImage.gameObject.SetActive(false);
         }
 
-        for(var i = 0 ; i < _objList.Count;i++)
+        for (var i = 0; i < _objList.Count; i++)
         {
-            if( i==num) _objList[i].SetActive(true);
+            if (i == num) _objList[i].SetActive(true);
             else _objList[i].SetActive(false);
         }
     }
@@ -40,14 +37,16 @@ public class SPUM_PreviewItem : MonoBehaviour
     public int _index;
 
     public void SetSprite()
-    {   
-        _managerST.SetSprite(_itemType,_sprite,_name,_index);
+    {
+        _managerST.SetSprite(_itemType, _sprite, _name, _index);
     }
 
     public GameObject DeleteButton;
+
     public void DeleteObj()
     {
         _managerST.DeleteUnit(_index);
     }
-    #endif
+
+#endif
 }

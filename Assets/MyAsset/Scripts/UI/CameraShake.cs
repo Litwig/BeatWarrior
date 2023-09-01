@@ -10,17 +10,17 @@ public class CameraShake : MonoBehaviour
     private Vector3 initialPosition;
 
     public bool isDamage;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         initialPosition = new Vector3(0f, 0f, -5f);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
-        if(isDamage)
+        if (isDamage)
         {
             if (ShakeTime > 0)
             {
@@ -35,7 +35,6 @@ public class CameraShake : MonoBehaviour
             }
             isDamage = false;
         }
-   
     }
 
     private float ShakingOn(float Time)

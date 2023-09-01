@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using Unity.VisualScripting;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+
 public class UiScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject PauseScreen;
+
     [SerializeField]
     private GameManager gameManagerScript;
+
     [SerializeField]
     private GameObject GameOverPanel;
+
     [SerializeField]
     private GameObject MainUI;
+
     [SerializeField]
     private TMP_Text MyScore;
 
@@ -41,7 +42,7 @@ public class UiScript : MonoBehaviour
 
     private void GameOverScreenOn()
     {
-        if(gameManagerScript.isDead==true)
+        if (gameManagerScript.isDead == true)
         {
             GameOverPanel.SetActive(true);
             MainUI.SetActive(false);

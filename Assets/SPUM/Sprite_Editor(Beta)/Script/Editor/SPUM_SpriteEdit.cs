@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEditor;
 using UnityEngine;
-using UnityEditor;
-using System.IO;
 
 [CustomEditor(typeof(SPUM_SpriteEditManager))]
 public class SPUM_SpriteEdit : Editor
@@ -12,7 +9,7 @@ public class SPUM_SpriteEdit : Editor
     {
         base.OnInspectorGUI();
         SPUM_SpriteEditManager SPB = (SPUM_SpriteEditManager)target;
-        if (GUILayout.Button("Empty All Sprite",GUILayout.Height(50))) 
+        if (GUILayout.Button("Empty All Sprite", GUILayout.Height(50)))
         {
             SPB.EmptyAllSprite();
         }

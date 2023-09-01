@@ -1,24 +1,23 @@
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+
 public class TimeScore : MonoBehaviour
 {
     // Start is called before the first frame update
     //Timer and Score
     [SerializeField]
-    GameManager gameManager_Script;
+    private GameManager gameManager_Script;
 
     [SerializeField]
     private TMP_Text Score;
-    void Start()
+
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
         Score.text = gameManager_Script.GetScore.ToString();
     }
 }

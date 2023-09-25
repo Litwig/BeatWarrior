@@ -29,8 +29,8 @@ public class HpUi : MonoBehaviour
     {
         if (playerScript.isDamaged)
         {
-            animator[playerInfo.PlayerHp - 1].SetBool("isOff", true);
-            //playerScript.isDamaged = false;
+            int index = Mathf.Max(0, playerInfo.PlayerHp - 1);
+            animator[index].SetBool("isOff", true);
         }
     }
 }

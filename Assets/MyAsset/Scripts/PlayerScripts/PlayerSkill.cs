@@ -5,18 +5,29 @@ public class PlayerSkill : MonoBehaviour
     [SerializeField]
     private SkillType skillTypeScript;
 
-    public FinalSkillGauge finalSkillGaugeScript;
+    [SerializeField]
+    private GameManager GameManagerScript;
 
+    [SerializeField]
+    private FinalSkillGauge[] GaugeScriptArray;
+
+    private int index;
+
+    
     // Start is called before the first frame update
     private void Start()
     {
-        if (!finalSkillGaugeScript)
-            Debug.Log("null");
+        GameManagerScript = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        for (int i = 0; i < GaugeScriptArray.Length; ++i)
+        {
+            GaugeScriptArray[i] = GameManagerScript.GaugeArray[i].GetComponent<FinalSkillGauge>();
+        }
     }
 
     // Update is called once per frame
     private void Update()
     {
+        index = GameManagerScript.GaugeIndex;
         SkillKeySet();
     }
 
@@ -46,11 +57,12 @@ public class PlayerSkill : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (!finalSkillGaugeScript.isShoot)
+            if (!GaugeScriptArray[index].isShoot)
             {
                 skillTypeScript.Generate = true;
                 skillTypeScript.enumSkillType = SkillType.SKILLTYPE.FINAL_TYPE;
-                finalSkillGaugeScript.isShoot = true;
+                GaugeScriptArray[index].isShoot = true;
+
             }
         }
     }

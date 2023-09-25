@@ -62,8 +62,10 @@ public class GameManager : MonoBehaviour
 
     #endregion SCRIPT
 
-    [SerializeField]
-    private GameObject[] GaugeArray;
+    #region GAUGE
+    public GameObject[] GaugeArray;
+    public int GaugeIndex;
+    #endregion GAUGE
 
     [SerializeField]
     private Transform PlayerSpawnPoint;
@@ -107,6 +109,8 @@ public class GameManager : MonoBehaviour
 
         Score();
         PlayerRespawn();
+        GetIndex();
+        Debug.Log("Index:" + GaugeIndex);
     }
 
     private void Score()
@@ -164,5 +168,17 @@ public class GameManager : MonoBehaviour
         selectGreyScript.SpriteColor(Color.white);
         PlayerObj.layer = 8;
         playerScript.isDamaged = false;
+    }
+
+    private void GetIndex()
+    {
+        for(int i=0; i<GaugeArray.Length; ++i)
+        {
+            if (GaugeArray[i].activeSelf)
+            {
+                GaugeIndex = i;
+            }
+        }
+
     }
 }

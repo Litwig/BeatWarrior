@@ -32,11 +32,12 @@ public class FinalSkillGauge : MonoBehaviour
             GaugeArray[GaugeArray.Length-1].SetActive(false);
 
             Invoke("GaugeZero", 1f);
-        
+            
             Debug.Log("GaugeIndex:" + GaugeIndex);
             GaugeZero();
-         //   StartCoroutine(nameof(GaugeCoolTime));
+            //StartCoroutine(nameof(GaugeCoolTime));
         }
+
         else
         {
             ChargeGauge();
@@ -57,26 +58,25 @@ public class FinalSkillGauge : MonoBehaviour
 
     private void ChargeGauge()
     {
-        if ((int)GaugeIndex == 0)
+        if ((int)GaugeIndex >= 0 && (int)GaugeIndex < GaugeArray.Length)  
         {
             GaugeIndex += Time.deltaTime;
             GaugeArray[(int)GaugeIndex].SetActive(true);
-        }   
+        }
 
-        if((int)GaugeIndex == GaugeArray.Length-1)
+        if ((int)GaugeIndex >= GaugeArray.Length - 1) 
         {
             isShoot = false;
+            GaugeIndex = GaugeArray.Length - 1;
         }
 
         //GaugeIndex = Mathf.Max(GaugeArray.Length - 1, 0);
         //GaugeIndex = ((int)gameManager.GetScore / 1000);
 
-
         else
         {
             GaugeIndex = GaugeArray.Length - 1;
         }
-
        
     }
 

@@ -6,7 +6,7 @@ public class FinalSkillGauge : MonoBehaviour
     [SerializeField]
     private GameObject[] GaugeArray;
 
-    public float GaugeIndex;
+    private float GaugeIndex;
 
     [SerializeField]
     private GameManager gameManager;
@@ -16,7 +16,7 @@ public class FinalSkillGauge : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        GaugeIndex = (int)gameManager.GetScore / 1000;
+        GaugeIndex = gameManager.SkillGaugeIndex;
         for (int i = 0; i < GaugeArray.Length; i++)
         {
             GaugeArray[i].SetActive(false);
@@ -27,20 +27,32 @@ public class FinalSkillGauge : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (isShoot)
+        if (isShoot) 
         {
-            GaugeArray[GaugeArray.Length-1].SetActive(false);
+            //GaugeArray[GaugeArray.Length-1].SetActive(false);
 
-            Invoke("GaugeZero", 1f);
-            
+            //Invoke("GaugeZero", 1f);
+
             Debug.Log("GaugeIndex:" + GaugeIndex);
+
             GaugeZero();
             //StartCoroutine(nameof(GaugeCoolTime));
         }
 
         else
         {
-            ChargeGauge();
+            if ((int)GaugeIndex >= 0 && (int)GaugeIndex < GaugeArray.Length)
+            {
+                GaugeIndex += Time.deltaTime;
+                GaugeArray[(int)GaugeIndex].SetActive(true);
+            }
+
+            if ((int)GaugeIndex >= GaugeArray.Length - 1)
+            {
+                isShoot = false;
+                GaugeIndex = GaugeArray.Length;
+            }
+            //ChargeGauge();
         }
     }
 
@@ -58,13 +70,13 @@ public class FinalSkillGauge : MonoBehaviour
 
     private void ChargeGauge()
     {
-        if ((int)GaugeIndex >= 0 && (int)GaugeIndex < GaugeArray.Length)  
+        if ((int)GaugeIndex >= 0 && (int)GaugeIndex < GaugeArray.Length)
         {
             GaugeIndex += Time.deltaTime;
             GaugeArray[(int)GaugeIndex].SetActive(true);
         }
 
-        if ((int)GaugeIndex >= GaugeArray.Length - 1) 
+        if ((int)GaugeIndex >= GaugeArray.Length - 1)
         {
             isShoot = false;
             GaugeIndex = GaugeArray.Length - 1;
@@ -77,7 +89,7 @@ public class FinalSkillGauge : MonoBehaviour
         {
             GaugeIndex = GaugeArray.Length - 1;
         }
-       
+
     }
 
 
@@ -89,7 +101,7 @@ public class FinalSkillGauge : MonoBehaviour
 
     //    for(int i=GaugeArray.Length; i<0; --i)
     //    {
-         
+
     //    }
 
     //    if (GaugeIndex <= 0)
@@ -97,7 +109,7 @@ public class FinalSkillGauge : MonoBehaviour
     //        GaugeIndex = 0;
     //        isShoot = true;
     //    }
-       
+
     //   // Debug.Log("코루틴실행");
     //}
 }

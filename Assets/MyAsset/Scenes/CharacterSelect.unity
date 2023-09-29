@@ -12368,7 +12368,7 @@ MonoBehaviour:
     show: 1
     deleteQuestion: 0
   - s: "\uAD81\uADF9\uAE30 \uAC8C\uC774\uC9C0 \uB0AE\uCD94\uAE30"
-    state: 0
+    state: 3
     show: 1
     deleteQuestion: 0
   - s: "\uAD81\uADF9\uAE30 \uB0A0\uB9AC\uAE30"

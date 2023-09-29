@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public float GetScore;
     public float Minute;
     private float SpeedUp;
-    public int GaugeScore;
 
     #endregion SCORE
 
@@ -65,6 +64,8 @@ public class GameManager : MonoBehaviour
     #region GAUGE
     public GameObject[] GaugeArray;
     public int GaugeIndex;
+
+    public int SkillGaugeIndex;
     #endregion GAUGE
 
     [SerializeField]
@@ -96,6 +97,9 @@ public class GameManager : MonoBehaviour
         }
 
         isDead = false;
+
+        SkillGaugeIndex = (int)GetScore / 1000;
+            // GaugeIndex = (int)gameManager.GetScore / 1000;
     }
 
     // Update is called once per frame
@@ -110,6 +114,7 @@ public class GameManager : MonoBehaviour
         Score();
         PlayerRespawn();
         GetIndex();
+        Charge_ZeroGauge();
         Debug.Log("Index:" + GaugeIndex);
     }
 
@@ -179,6 +184,10 @@ public class GameManager : MonoBehaviour
                 GaugeIndex = i;
             }
         }
+    }
 
+    private void Charge_ZeroGauge()
+    {
+        
     }
 }

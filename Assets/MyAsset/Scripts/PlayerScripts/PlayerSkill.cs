@@ -27,7 +27,7 @@ public class PlayerSkill : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        index = GameManagerScript.GaugeIndex;
+        index = (int)GameManagerScript.GaugeIndex;
         SkillKeySet();
     }
 

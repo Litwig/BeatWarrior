@@ -63,9 +63,9 @@ public class GameManager : MonoBehaviour
 
     #region GAUGE
     public GameObject[] GaugeArray;
-    public int GaugeIndex;
+    public float GaugeIndex;
 
-    public int SkillGaugeIndex;
+    public float SkillGaugeIndex;
     #endregion GAUGE
 
     [SerializeField]
@@ -98,8 +98,8 @@ public class GameManager : MonoBehaviour
 
         isDead = false;
 
-        SkillGaugeIndex = (int)GetScore / 1000;
-            // GaugeIndex = (int)gameManager.GetScore / 1000;
+        //SkillGaugeIndex = 0;
+        // GaugeIndex = (int)gameManager.GetScore / 1000;
     }
 
     // Update is called once per frame
@@ -113,9 +113,7 @@ public class GameManager : MonoBehaviour
 
         Score();
         PlayerRespawn();
-        GetIndex();
         Charge_ZeroGauge();
-        Debug.Log("Index:" + GaugeIndex);
     }
 
     private void Score()
@@ -156,6 +154,7 @@ public class GameManager : MonoBehaviour
         isDead = true;
     }
 
+
     private void PlayerRespawn()
     {
         if (playerScript.isFall == true)
@@ -175,19 +174,36 @@ public class GameManager : MonoBehaviour
         playerScript.isDamaged = false;
     }
 
-    private void GetIndex()
-    {
-        for(int i=0; i<GaugeArray.Length; ++i)
-        {
-            if (GaugeArray[i].activeSelf)
-            {
-                GaugeIndex = i;
-            }
-        }
-    }
-
     private void Charge_ZeroGauge()
     {
-        
+        //게임매니저에서 인덱스 증가
+        //FinalSkillGauge에서 인덱스 가져와서 UI로 띄움
+        //그 인덱스가 차면 스킬 가능
+        //비면 스킬 불가능.
+
+        if (GaugeIndex == 0 && !finalSkillGaugeScript.isShoot)
+        {
+            Debug.Log("GaugeIn");
+            GaugeIndex += Time.deltaTime;
+            Debug.Log("Index:" + GaugeIndex);
+
+            if (GaugeIndex >= 10)
+            {
+                finalSkillGaugeScript.isShoot = true;
+            }
+            
+        }
+
+        else
+        {
+            Debug.Log("GaugeOut");
+            GaugeIndex -= Time.deltaTime;
+
+            if (GaugeIndex <= 0)
+            {
+                GaugeIndex = 0;                
+                finalSkillGaugeScript.isShoot = false;
+            }
+        }
     }
 }

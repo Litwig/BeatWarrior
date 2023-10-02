@@ -6,7 +6,7 @@ public class FinalSkillGauge : MonoBehaviour
     [SerializeField]
     private GameObject[] GaugeArray;
 
-    private float GaugeIndex;
+    public float GaugeIndex;
 
     [SerializeField]
     private GameManager gameManager;
@@ -43,7 +43,7 @@ public class FinalSkillGauge : MonoBehaviour
         {
             if ((int)GaugeIndex >= 0 && (int)GaugeIndex < GaugeArray.Length)
             {
-                GaugeIndex += Time.deltaTime;
+                //GaugeIndex += Time.deltaTime;
                 GaugeArray[(int)GaugeIndex].SetActive(true);
             }
 
@@ -81,9 +81,6 @@ public class FinalSkillGauge : MonoBehaviour
             isShoot = false;
             GaugeIndex = GaugeArray.Length - 1;
         }
-
-        //GaugeIndex = Mathf.Max(GaugeArray.Length - 1, 0);
-        //GaugeIndex = ((int)gameManager.GetScore / 1000);
 
         else
         {

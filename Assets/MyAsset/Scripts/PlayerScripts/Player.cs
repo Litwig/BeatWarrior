@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     {
         Jump();
         CurrTime += Time.deltaTime;
-        Debug.Log("player bool: " + isDamaged);
+        //Debug.Log("player bool: " + isDamaged);
     }
 
     private void Jump()

@@ -27,6 +27,7 @@ public class FinalSkillGauge : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        GaugeIndex = gameManager.SkillGaugeIndex;
         if (isShoot) 
         {
             //GaugeArray[GaugeArray.Length-1].SetActive(false);
@@ -58,7 +59,7 @@ public class FinalSkillGauge : MonoBehaviour
 
     private void GaugeZero()
     {
-        GaugeIndex -= Time.deltaTime;
+        //GaugeIndex -= Time.deltaTime;
         GaugeArray[(int)GaugeIndex].SetActive(false);
 
         if (GaugeIndex <= 0)

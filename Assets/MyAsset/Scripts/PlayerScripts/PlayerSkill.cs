@@ -57,12 +57,15 @@ public class PlayerSkill : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (!GaugeScriptArray[index].isShoot)
+            if (!GaugeScriptArray[index].isShoot && GameManagerScript.SkillGaugeIndex >= 10) 
             {
                 skillTypeScript.Generate = true;
                 skillTypeScript.enumSkillType = SkillType.SKILLTYPE.FINAL_TYPE;
                 GaugeScriptArray[index].isShoot = true;
-
+            }
+            else
+            {
+                return;
             }
         }
     }

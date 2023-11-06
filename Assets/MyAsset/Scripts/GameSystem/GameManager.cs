@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
             Dead();
             playerScript.isDamaged = false;
         }
-
+        Debug.Log("SkillGaugeIndex: " + SkillGaugeIndex);
         Score();
         PlayerRespawn();
         Charge_ZeroGauge();
@@ -181,27 +181,25 @@ public class GameManager : MonoBehaviour
         //그 인덱스가 차면 스킬 가능
         //비면 스킬 불가능.
 
-        if (SkillGaugeIndex <= 9 && !finalSkillGaugeScript.isShoot)
+        if (!finalSkillGaugeScript.isShoot)
         {
             SkillGaugeIndex += Time.deltaTime;
-
-
-            if (SkillGaugeIndex >= 9)
+            if (SkillGaugeIndex > 9)
             {
                 SkillGaugeIndex = 9;
                 //finalSkillGaugeScript.isShoot = true;
             }
         }
 
-        else if (finalSkillGaugeScript.isShoot && SkillGaugeIndex != 0) 
+        else if (finalSkillGaugeScript.isShoot) 
         {
             SkillGaugeIndex -= Time.deltaTime;
-            Debug.Log("Index:" + GaugeIndex);
-            //if (SkillGaugeIndex <= 0)
-            //{
-            //    SkillGaugeIndex = 0;
-            //    finalSkillGaugeScript.isShoot = false;
-            //}
+            Debug.Log("true!");
+            if (SkillGaugeIndex <= 0)
+            {
+                SkillGaugeIndex = 0;
+                finalSkillGaugeScript.isShoot = false;
+            }
         }
     }
 }

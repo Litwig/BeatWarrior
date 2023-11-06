@@ -21,34 +21,30 @@ public class FinalSkillGauge : MonoBehaviour
         {
             GaugeArray[i].SetActive(false);
         }
-
     }
 
     // Update is called once per frame
     private void Update()
     {
         GaugeIndex = gameManager.SkillGaugeIndex;
-        if (isShoot) 
+        if (isShoot) //ÀÌ°Å ±Ã ½î°í³­µÚ
         {
             //GaugeArray[GaugeArray.Length-1].SetActive(false);
 
             //Invoke("GaugeZero", 1f);
-
-            Debug.Log("GaugeIndex:" + GaugeIndex);
-
             GaugeZero();
             //StartCoroutine(nameof(GaugeCoolTime));
         }
 
-        else
+        else //isShoot = false ¾ÆÁ÷ ±Ã±Ø±â ¾È½úÀ»¶§
         {
-            if ((int)GaugeIndex >= 0 && (int)GaugeIndex < GaugeArray.Length)
+            if ((int)GaugeIndex >= 0 && (int)GaugeIndex < GaugeArray.Length) 
             {
                 //GaugeIndex += Time.deltaTime;
                 GaugeArray[(int)GaugeIndex].SetActive(true);
             }
 
-            if ((int)GaugeIndex >= GaugeArray.Length - 1)
+            if ((int)GaugeIndex == GaugeArray.Length - 1)
             {
                 isShoot = false;
                 GaugeIndex = GaugeArray.Length;
@@ -59,8 +55,8 @@ public class FinalSkillGauge : MonoBehaviour
 
     private void GaugeZero()
     {
-        //GaugeIndex -= Time.deltaTime;
-        GaugeArray[(int)GaugeIndex].SetActive(false);
+        Debug.Log("skill shooted!");
+        GaugeIndex -= Time.deltaTime;
 
         if (GaugeIndex <= 0)
         {

@@ -12360,7 +12360,7 @@ MonoBehaviour:
   title: TodoList
   textList:
   - s: "\uAD81\uADF9\uAE30 \uC5F0\uCD9C"
-    state: 0
+    state: 3
     show: 1
     deleteQuestion: 0
   - s: "\uBB34\uC801 \uC544\uC774\uD15C"
@@ -12377,6 +12377,10 @@ MonoBehaviour:
     deleteQuestion: 0
   - s: "\uAD81\uADF9\uAE30 \uAC8C\uC774\uC9C0 \uB9CC\uB4E4\uAE30"
     state: 3
+    show: 1
+    deleteQuestion: 0
+  - s: "\uAD81 \uAC8C\uC774\uC9C0 \uC904\uC774\uAE30"
+    state: 0
     show: 1
     deleteQuestion: 0
 --- !u!4 &1298702471

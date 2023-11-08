@@ -9,9 +9,14 @@ public class GaugeUI : MonoBehaviour
     private ReSpawn reSpawnScript;
 
     private bool isGaugeFull;
+    
     // Start is called before the first frame update
     private void Start()
     {
+        for (int i = 0; i < GaugeArray.Length; i++)
+        {
+            GaugeArray[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -27,11 +32,12 @@ public class GaugeUI : MonoBehaviour
                     if (i == GaugeArray.Length)
                         isGaugeFull = true;
                 }
-                //else
-                //    GaugeArray[i].SetActive(false);
+
+                else
+                    GaugeArray[i].SetActive(false);
             }
         }
-
+        
         if(isGaugeFull)
         {
             for (int i = GaugeArray.Length; i >= 0; i--)
@@ -44,8 +50,6 @@ public class GaugeUI : MonoBehaviour
                         isGaugeFull = false;
                 }
             }
-        }
-
-        
+        }        
     }
 }

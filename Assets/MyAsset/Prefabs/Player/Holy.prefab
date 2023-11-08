@@ -2141,7 +2141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2153910811388617434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2272,11 +2272,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillTypeScript: {fileID: 383422370}
-  GameManagerScript: {fileID: 0}
   GaugeScriptArray:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  finalSkillGaugeScript: {fileID: 0}
+  isIndexFull: 0
 --- !u!114 &8282402070220214234
 MonoBehaviour:
   m_ObjectHideFlags: 0

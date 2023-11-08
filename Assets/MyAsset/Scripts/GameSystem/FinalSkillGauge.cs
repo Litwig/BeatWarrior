@@ -7,103 +7,50 @@ public class FinalSkillGauge : MonoBehaviour
     private GameObject[] GaugeArray;
 
     public float GaugeIndex;
-
-    [SerializeField]
-    private GameManager gameManager;
+    public int GaugeArrayFullIndex;
 
     public bool isShoot;
+    private int GaugeIndex_int => (int)GaugeIndex;
 
     // Start is called before the first frame update
     private void Start()
     {
-        GaugeIndex = gameManager.SkillGaugeIndex;
-        for (int i = 0; i < GaugeArray.Length; i++)
-        {
-            GaugeArray[i].SetActive(false);
-        }
+        GaugeArrayFullIndex = GaugeArray.Length - 1;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        GaugeIndex = gameManager.SkillGaugeIndex;
-        if (isShoot) //ÀÌ°Å ±Ã ½î°í³­µÚ
-        {
-            //GaugeArray[GaugeArray.Length-1].SetActive(false);
+        GaugeChange();
+    }
 
-            //Invoke("GaugeZero", 1f);
-            GaugeZero();
-            //StartCoroutine(nameof(GaugeCoolTime));
+    private void GaugeChange()
+    {
+        if(isShoot) //±Ã½úÀ»¶§
+        {
+            GaugeIndex -= Time.deltaTime;
+
+            if (GaugeIndex <= 0)
+            {
+                GaugeIndex = 0;
+                isShoot = true;
+            }
         }
 
-        else //isShoot = false ¾ÆÁ÷ ±Ã±Ø±â ¾È½úÀ»¶§
+        else //±Ã¾øÀ»¶§
         {
-            if ((int)GaugeIndex >= 0 && (int)GaugeIndex < GaugeArray.Length) 
+
+            if (GaugeIndex_int >= 0 && GaugeIndex_int < GaugeArray.Length)
             {
-                //GaugeIndex += Time.deltaTime;
-                GaugeArray[(int)GaugeIndex].SetActive(true);
+                GaugeIndex += Time.deltaTime;
             }
 
-            if ((int)GaugeIndex == GaugeArray.Length - 1)
+            if (GaugeIndex_int >= GaugeArray.Length - 1)
             {
-                isShoot = false;
-                GaugeIndex = GaugeArray.Length;
+                GaugeIndex = GaugeArray.Length - 1;
             }
-            //ChargeGauge();
-        }
-    }
 
-    private void GaugeZero()
-    {
-        Debug.Log("skill shooted!");
-        GaugeIndex -= Time.deltaTime;
-
-        if (GaugeIndex <= 0)
-        {
-            GaugeIndex = 0;
-            isShoot = true;
-        }
-    }
-
-    private void ChargeGauge()
-    {
-        if ((int)GaugeIndex >= 0 && (int)GaugeIndex < GaugeArray.Length)
-        {
-            GaugeIndex += Time.deltaTime;
-            GaugeArray[(int)GaugeIndex].SetActive(true);
-        }
-
-        if ((int)GaugeIndex >= GaugeArray.Length - 1)
-        {
-            isShoot = false;
-            GaugeIndex = GaugeArray.Length - 1;
-        }
-
-        else
-        {
-            GaugeIndex = GaugeArray.Length - 1;
         }
 
     }
-
-
-    //private IEnumerator GaugeCoolTime()
-    //{
-    //   // Debug.Log("ÄÚ·çÆ¾½ÇÇàÀü");
-    //    //GaugeIndex = Mathf.Max(GaugeArray.Length - 1, 0);
-
-
-    //    for(int i=GaugeArray.Length; i<0; --i)
-    //    {
-
-    //    }
-
-    //    if (GaugeIndex <= 0)
-    //    {
-    //        GaugeIndex = 0;
-    //        isShoot = true;
-    //    }
-
-    //   // Debug.Log("ÄÚ·çÆ¾½ÇÇà");
-    //}
 }

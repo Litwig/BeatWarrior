@@ -2412,11 +2412,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillTypeScript: {fileID: 1408476344}
-  GameManagerScript: {fileID: 0}
   GaugeScriptArray:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  finalSkillGaugeScript: {fileID: 0}
+  isIndexFull: 0
 --- !u!114 &8289761004549067246
 MonoBehaviour:
   m_ObjectHideFlags: 0

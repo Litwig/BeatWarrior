@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    
     #region SCORE
 
     private float TimerCount;
@@ -63,9 +64,9 @@ public class GameManager : MonoBehaviour
 
     #region GAUGE
     public GameObject[] GaugeArray;
-    public float GaugeIndex;
+    private float GaugeIndex;
 
-    public float SkillGaugeIndex;
+    private float SkillGaugeIndex;
     #endregion GAUGE
 
     [SerializeField]
@@ -77,11 +78,13 @@ public class GameManager : MonoBehaviour
         GetScore = 0;
         Time.timeScale = 1f;
         PlayerObj = reSpawnScript.Character;
+
         playerScript = PlayerObj.GetComponent<Player>();
         playerInfoScript = PlayerObj.GetComponent<PlayerInfo>();
         selectGreyScript = PlayerObj.GetComponent<SelectGrey>();
         quadScript = SkyObject.GetComponent<QuadScript>();
         playerSkillScript = PlayerObj.GetComponent<PlayerSkill>();
+        
         selectGreyScript.ColorType = SelectGrey.COLORTYPE.STAGE_TYPE;
         characterDataScript = GameObject.FindWithTag("GameSystem").GetComponent<CharacterData>();
 
@@ -98,11 +101,14 @@ public class GameManager : MonoBehaviour
 
         isDead = false;
 
+        playerSkillScript.finalSkillGaugeScript = finalSkillGaugeScript;
+       
         //SkillGaugeIndex = 0;
         // GaugeIndex = (int)gameManager.GetScore / 1000;
     }
 
     // Update is called once per frame
+
     private void Update()
     {
         if (playerScript.isDamaged)
@@ -110,10 +116,11 @@ public class GameManager : MonoBehaviour
             Dead();
             playerScript.isDamaged = false;
         }
+
         Debug.Log("SkillGaugeIndex: " + SkillGaugeIndex);
         Score();
         PlayerRespawn();
-        Charge_ZeroGauge();
+        GaugeManager();
     }
 
     private void Score()
@@ -154,7 +161,6 @@ public class GameManager : MonoBehaviour
         isDead = true;
     }
 
-
     private void PlayerRespawn()
     {
         if (playerScript.isFall == true)
@@ -174,32 +180,16 @@ public class GameManager : MonoBehaviour
         playerScript.isDamaged = false;
     }
 
-    private void Charge_ZeroGauge()
+    private void GaugeManager()
     {
-        //게임매니저에서 인덱스 증가
-        //FinalSkillGauge에서 인덱스 가져와서 UI로 띄움
-        //그 인덱스가 차면 스킬 가능
-        //비면 스킬 불가능.
+       if(finalSkillGaugeScript.GaugeIndex == finalSkillGaugeScript.GaugeArrayFullIndex)
+       {
+           playerSkillScript.isIndexFull = true;
+       }
 
-        if (!finalSkillGaugeScript.isShoot)
-        {
-            SkillGaugeIndex += Time.deltaTime;
-            if (SkillGaugeIndex > 9)
-            {
-                SkillGaugeIndex = 9;
-                //finalSkillGaugeScript.isShoot = true;
-            }
-        }
-
-        else if (finalSkillGaugeScript.isShoot) 
-        {
-            SkillGaugeIndex -= Time.deltaTime;
-            Debug.Log("true!");
-            if (SkillGaugeIndex <= 0)
-            {
-                SkillGaugeIndex = 0;
-                finalSkillGaugeScript.isShoot = false;
-            }
-        }
+       else
+       {
+           playerSkillScript.isIndexFull = false;
+       }
     }
 }

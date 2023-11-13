@@ -52,7 +52,11 @@ public class GameManager : MonoBehaviour
 
     private SelectGrey selectGreyScript;
 
+    [SerializeField]
     private FinalSkillGauge finalSkillGaugeScript;
+    
+    [SerializeField]
+    private GaugeUI GaugeUIScript;
 
     [SerializeField]
     private PlayerSkill playerSkillScript;
@@ -67,6 +71,10 @@ public class GameManager : MonoBehaviour
     private float GaugeIndex;
 
     private float SkillGaugeIndex;
+    private float putUI_Index; //ui스크립트에 게이지 스크립트의 인덱스 넣어줌.
+
+    private bool isGaugeFull; //ui 게이지 스크립트가 인덱스 다 찼냐... 
+    
     #endregion GAUGE
 
     [SerializeField]
@@ -95,7 +103,14 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < GaugeArray.Length; ++i)
         {
-            finalSkillGaugeScript = GaugeArray[i].GetComponent<FinalSkillGauge>();
+            if (i == CharacterData.instance.PlayerIndex)
+            {
+                finalSkillGaugeScript = GaugeArray[i].GetComponent<FinalSkillGauge>();
+                GaugeUIScript = GaugeArray[i].GetComponent<GaugeUI>();
+            }
+            else
+                continue;
+            
             //playerSkillScript.finalSkillGaugeScript = GaugeArray[characterDataScript.PlayerIndex].GetComponent<FinalSkillGauge>();
         }
 
@@ -103,8 +118,6 @@ public class GameManager : MonoBehaviour
 
         playerSkillScript.finalSkillGaugeScript = finalSkillGaugeScript;
        
-        //SkillGaugeIndex = 0;
-        // GaugeIndex = (int)gameManager.GetScore / 1000;
     }
 
     // Update is called once per frame
@@ -116,6 +129,12 @@ public class GameManager : MonoBehaviour
             Dead();
             playerScript.isDamaged = false;
         }
+
+        if (finalSkillGaugeScript == null)
+            Debug.Log("SkillScript is null");
+
+        if (GaugeUIScript == null)
+            Debug.Log("gaugeuiScript is null");
 
         Debug.Log("SkillGaugeIndex: " + SkillGaugeIndex);
         Score();
@@ -182,14 +201,41 @@ public class GameManager : MonoBehaviour
 
     private void GaugeManager()
     {
-       if(finalSkillGaugeScript.GaugeIndex == finalSkillGaugeScript.GaugeArrayFullIndex)
-       {
-           playerSkillScript.isIndexFull = true;
-       }
+        for(int i=0; i<GaugeArray.Length; ++i)
+        {
+            if (CharacterData.instance.PlayerIndex == i)
+            {
+                GaugeArray[i].SetActive(true);
+            }
 
-       else
-       {
-           playerSkillScript.isIndexFull = false;
-       }
+            else
+            {
+                GaugeArray[i].SetActive(false);
+            }
+        }
+
+
+
+        GaugeUIScript.GaugeUI_Index = (int)finalSkillGaugeScript.GaugeIndex;
+        //final Gauge script에서 
+        if (GaugeUIScript.GaugeUI_Index == GaugeUIScript.GaugeUI_Index - 1) //게이지 다 참
+        {
+            GaugeUIScript.GaugeUI_Index = GaugeUIScript.GaugeArray.Length;
+            playerSkillScript.isIndexFull = true;
+        }
+
+        else
+        {
+            playerSkillScript.isIndexFull = false;
+        }
+
+        if(finalSkillGaugeScript.isShoot)
+        {
+            GaugeUIScript.isGaugeLess = true;
+        }
+        else
+        {
+            GaugeUIScript.isGaugeLess = false;
+        }
     }
 }

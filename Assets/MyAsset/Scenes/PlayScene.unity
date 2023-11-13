@@ -4107,6 +4107,7 @@ GameObject:
   - component: {fileID: 709984127}
   - component: {fileID: 709984128}
   - component: {fileID: 709984126}
+  - component: {fileID: 709984129}
   m_Layer: 5
   m_Name: Gauge_Holy
   m_TagString: Untagged
@@ -4199,6 +4200,32 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &709984129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709984124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663be577e0635ed49b04d258a8d7e6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GaugeArray:
+  - {fileID: 1057157669}
+  - {fileID: 926474494}
+  - {fileID: 329336408}
+  - {fileID: 842521680}
+  - {fileID: 453142026}
+  - {fileID: 976474587}
+  - {fileID: 1697154021}
+  - {fileID: 737172895}
+  - {fileID: 164956327}
+  - {fileID: 1532002961}
+  reSpawnScript: {fileID: 1824033163}
+  GaugeIndex: 0
+  GaugeUI_Index: 0
 --- !u!1 &719156571
 GameObject:
   m_ObjectHideFlags: 0
@@ -5357,6 +5384,7 @@ GameObject:
   - component: {fileID: 959028159}
   - component: {fileID: 959028160}
   - component: {fileID: 959028158}
+  - component: {fileID: 959028161}
   m_Layer: 5
   m_Name: Gauge_Ice
   m_TagString: Untagged
@@ -5449,6 +5477,32 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &959028161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959028156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663be577e0635ed49b04d258a8d7e6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GaugeArray:
+  - {fileID: 1073827362}
+  - {fileID: 1308820438}
+  - {fileID: 1051692969}
+  - {fileID: 828460115}
+  - {fileID: 1397471468}
+  - {fileID: 1235697533}
+  - {fileID: 325289026}
+  - {fileID: 997926512}
+  - {fileID: 451936461}
+  - {fileID: 1915033444}
+  reSpawnScript: {fileID: 1824033163}
+  GaugeIndex: 0
+  GaugeUI_Index: 0
 --- !u!1 &976474587
 GameObject:
   m_ObjectHideFlags: 0
@@ -7391,6 +7445,7 @@ GameObject:
   - component: {fileID: 1485541803}
   - component: {fileID: 1485541804}
   - component: {fileID: 1485541802}
+  - component: {fileID: 1485541805}
   m_Layer: 5
   m_Name: Gauge_Dark
   m_TagString: Untagged
@@ -7483,6 +7538,32 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1485541805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485541800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663be577e0635ed49b04d258a8d7e6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GaugeArray:
+  - {fileID: 1171631226}
+  - {fileID: 1369224742}
+  - {fileID: 365305100}
+  - {fileID: 99816974}
+  - {fileID: 842321202}
+  - {fileID: 2087128885}
+  - {fileID: 424750722}
+  - {fileID: 1742341447}
+  - {fileID: 316377307}
+  - {fileID: 634913148}
+  reSpawnScript: {fileID: 1824033163}
+  GaugeIndex: 0
+  GaugeUI_Index: 0
 --- !u!1 &1511933400
 GameObject:
   m_ObjectHideFlags: 0
@@ -7795,6 +7876,8 @@ MonoBehaviour:
   sceneControllScript: {fileID: 918434342}
   reSpawnScript: {fileID: 1824033163}
   cameraShakeScript: {fileID: 413554527}
+  finalSkillGaugeScript: {fileID: 0}
+  GaugeUIScript: {fileID: 0}
   playerSkillScript: {fileID: 0}
   characterDataScript: {fileID: 0}
   GaugeArray:
@@ -8836,7 +8919,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1824033162}
   - component: {fileID: 1824033163}
-  - component: {fileID: 1824033164}
   m_Layer: 0
   m_Name: PlayerSpawn
   m_TagString: Untagged
@@ -8876,23 +8958,6 @@ MonoBehaviour:
   - {fileID: 4868812839621767346, guid: b5818508798d13f4abaa10e5a5856f7c, type: 3}
   - {fileID: 5308059056049938374, guid: df40681f246b03b479581ce81bcf6d21, type: 3}
   Character: {fileID: 0}
---- !u!114 &1824033164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824033161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 663be577e0635ed49b04d258a8d7e6ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GaugeArray:
-  - {fileID: 1485541800}
-  - {fileID: 709984124}
-  - {fileID: 959028156}
-  reSpawnScript: {fileID: 1824033163}
 --- !u!1 &1877091068
 GameObject:
   m_ObjectHideFlags: 0

@@ -57,7 +57,8 @@ public class PlayerSkill : MonoBehaviour
             {
                 skillTypeScript.Generate = true;
                 skillTypeScript.enumSkillType = SkillType.SKILLTYPE.FINAL_TYPE;
-                GaugeScriptArray[index].isShoot = true;
+                finalSkillGaugeScript.isShoot = true;
+                isIndexFull = true;
             }
 
             else

@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
             }
             else
             {
+                return;
             }
         }
     }
@@ -62,6 +63,11 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Falling"))
         {
             isFall = true;
+
+            if(!isFall)
+            {
+                return;
+            }
         }
 
         if (other.gameObject.layer == 3)

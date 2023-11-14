@@ -214,13 +214,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
-
-
         GaugeUIScript.GaugeUI_Index = (int)finalSkillGaugeScript.GaugeIndex;
         //final Gauge script에서 
         if (GaugeUIScript.GaugeUI_Index == GaugeUIScript.GaugeUI_Index - 1) //게이지 다 참
         {
-            GaugeUIScript.GaugeUI_Index = GaugeUIScript.GaugeArray.Length;
+            GaugeUIScript.GaugeUI_Index = GaugeUIScript.GaugeArray.Length - 1;
             playerSkillScript.isIndexFull = true;
         }
 

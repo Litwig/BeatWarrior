@@ -10,6 +10,8 @@ public class GaugeUI : MonoBehaviour
     public int GaugeUI_Index;
 
     public bool isGaugeLess;
+
+    int count;
     // Start is called before the first frame update
     private void Start()
     {
@@ -26,6 +28,7 @@ public class GaugeUI : MonoBehaviour
         {
             GaugeArray[GaugeUI_Index].SetActive(true);
         }
+
         else
         {
             GaugeArray[GaugeUI_Index].SetActive(false);

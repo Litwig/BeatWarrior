@@ -15,7 +15,7 @@ public class FinalSkillGauge : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        GaugeArrayFullIndex = GaugeArray.Length - 1;
+        GaugeArrayFullIndex = GaugeArray.Length;
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class FinalSkillGauge : MonoBehaviour
     {
         if(isShoot) //±Ã½úÀ»¶§
         {
-            if (GaugeIndex_int <= GaugeArray.Length - 1)
+            if (GaugeIndex_int <= GaugeArray.Length)
             {
                 GaugeIndex -= Time.deltaTime;
                 if (GaugeIndex <= 0)
@@ -45,13 +45,11 @@ public class FinalSkillGauge : MonoBehaviour
             {
                 GaugeIndex += Time.deltaTime;
             }
-
+            
             if (GaugeIndex_int >= GaugeArray.Length - 1)
             {
-                GaugeIndex = GaugeArray.Length - 1;
+                GaugeIndex = GaugeArray.Length;
             }
-
         }
-
     }
 }

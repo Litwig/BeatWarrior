@@ -3,6 +3,11 @@ using UnityEngine;
 public class PlayerAnimController : MonoBehaviour
 {
     private Animator animator;
+
+
+    public float UpSpeed;
+
+    public bool isRun;
     //[SerializeField]
     //private GameManager gameManager;
 
@@ -16,6 +21,15 @@ public class PlayerAnimController : MonoBehaviour
     private void Update()
     {
         PlayerAnimation();
+        if(isRun)
+        {
+            PlayerRun();
+        }
+        else
+        {
+            //animator original speed
+            animator.speed = 1;
+        }
     }
 
     private void PlayerAnimation()
@@ -40,4 +54,11 @@ public class PlayerAnimController : MonoBehaviour
         //    animator.SetBool("isDead", true);
         //}
     }
+
+    private void PlayerRun()
+    {
+        animator.speed = UpSpeed;
+    }
+
+
 }

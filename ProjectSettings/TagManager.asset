@@ -24,6 +24,7 @@ TagManager:
   - DarkUI
   - HolyUI
   - IceUI
+  - RunPos
   layers:
   - Default
   - TransparentFX

@@ -60,9 +60,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private PlayerSkill playerSkillScript;
-
+    
     [SerializeField]
     private CharacterData characterDataScript;
+
+    [SerializeField]
+    private RunItem RunItemScript;
+
+    private PlayerAnimController playerAnimControllerScript;
 
     #endregion SCRIPT
 
@@ -95,6 +100,7 @@ public class GameManager : MonoBehaviour
         
         selectGreyScript.ColorType = SelectGrey.COLORTYPE.STAGE_TYPE;
         characterDataScript = GameObject.FindWithTag("GameSystem").GetComponent<CharacterData>();
+        playerAnimControllerScript = PlayerObj.GetComponentInChildren<PlayerAnimController>();
 
         for (int mapScrollIndex = 0; mapScrollIndex < MapPlatformObj.Length; mapScrollIndex++)
         {
@@ -140,6 +146,7 @@ public class GameManager : MonoBehaviour
         Score();
         PlayerRespawn();
         GaugeManager();
+        SetInfiniteRun();
     }
 
     private void Score()
@@ -234,6 +241,25 @@ public class GameManager : MonoBehaviour
         else
         {
             GaugeUIScript.isGaugeLess = false;
+        }
+    }
+
+    private void SetInfiniteRun()
+    {
+        if (RunItemScript.isStartRun)
+        {
+            playerAnimControllerScript.isRun = true;
+            playerAnimControllerScript.UpSpeed -= Time.deltaTime;
+
+            if(playerAnimControllerScript.UpSpeed ==1)
+            {
+                playerAnimControllerScript.isRun = false;
+            }
+        }
+        else
+        {
+            //turn to Upspeed
+            playerAnimControllerScript.UpSpeed = 2;
         }
     }
 }

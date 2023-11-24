@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public bool isPotion;
 
     public bool ItemGet;
+    public bool isStartRun;
 
     private bool isNoHitTime;
     private float CurrTime;
@@ -91,6 +92,11 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             JumpCount = 1;
+        }
+
+        if(other.CompareTag("RunPos"))
+        {
+            isStartRun = true;
         }
     }
 

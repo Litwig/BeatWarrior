@@ -13,7 +13,6 @@ public class RunItem : MonoBehaviour
     [SerializeField]
     private GameObject potionEffect;
 
-    public bool isStartRun;
    
     // Start is called before the first frame update
     void Start()
@@ -26,18 +25,18 @@ public class RunItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+     
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
-            isStartRun = true;
             spriteRenderer.enabled = false;
             potionEffect.SetActive(false);
             Instantiate(twinkleEffect, transform.position, transform.rotation);
             audioSource.Play();
+            Destroy(this);
         }
     }
 }

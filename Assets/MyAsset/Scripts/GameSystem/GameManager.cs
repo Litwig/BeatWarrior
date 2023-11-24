@@ -64,10 +64,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private CharacterData characterDataScript;
 
-    [SerializeField]
-    private RunItem RunItemScript;
-
     private PlayerAnimController playerAnimControllerScript;
+
+    [SerializeField]
+    private SelectGrey characterColorScript;
 
     #endregion SCRIPT
 
@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
         selectGreyScript.ColorType = SelectGrey.COLORTYPE.STAGE_TYPE;
         characterDataScript = GameObject.FindWithTag("GameSystem").GetComponent<CharacterData>();
         playerAnimControllerScript = PlayerObj.GetComponentInChildren<PlayerAnimController>();
+        characterColorScript = PlayerObj.GetComponentInChildren<SelectGrey>();
 
         for (int mapScrollIndex = 0; mapScrollIndex < MapPlatformObj.Length; mapScrollIndex++)
         {
@@ -246,14 +247,18 @@ public class GameManager : MonoBehaviour
 
     private void SetInfiniteRun()
     {
-        if (RunItemScript.isStartRun)
+        if (playerScript.isStartRun)
         {
             playerAnimControllerScript.isRun = true;
-            playerAnimControllerScript.UpSpeed -= Time.deltaTime;
+            characterColorScript.ColorType = SelectGrey.COLORTYPE.RUN_TYPE;
+            float ReturnSpeed = 0;
+            ReturnSpeed += Time.deltaTime;
 
-            if(playerAnimControllerScript.UpSpeed ==1)
+            if (ReturnSpeed >= 5.0f)
             {
                 playerAnimControllerScript.isRun = false;
+                characterColorScript.ColorType = SelectGrey.COLORTYPE.STAGE_TYPE;
+                
             }
         }
         else

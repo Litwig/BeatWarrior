@@ -4,7 +4,7 @@ using UnityEngine;
 public class SelectGrey : MonoBehaviour
 {
     public enum COLORTYPE
-    { SELECT_TYPE, STAGE_TYPE }
+    { SELECT_TYPE, STAGE_TYPE, RUN_TYPE, END_TYPE }
 
     public COLORTYPE ColorType;
 
@@ -54,6 +54,11 @@ public class SelectGrey : MonoBehaviour
                 break;
 
             case COLORTYPE.STAGE_TYPE:
+                SpriteColor(Color.white);
+                break;
+
+            case COLORTYPE.RUN_TYPE:
+                SpriteColor(Color.cyan);
                 break;
         }
     }

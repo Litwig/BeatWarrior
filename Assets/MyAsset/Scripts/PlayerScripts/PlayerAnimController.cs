@@ -4,7 +4,6 @@ public class PlayerAnimController : MonoBehaviour
 {
     private Animator animator;
 
-
     public float UpSpeed;
 
     public bool isRun;
@@ -59,6 +58,4 @@ public class PlayerAnimController : MonoBehaviour
     {
         animator.speed = UpSpeed;
     }
-
-
 }
